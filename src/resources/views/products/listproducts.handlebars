@@ -1,0 +1,28 @@
+<div class="mt-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Hãng</th>
+        <th scope="col">Thời gian tạo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each products}}
+        <tr>
+          <th scope="row">{{sum 1 @index}}</th>
+          <td>{{this.name}}</td>
+          <td>{{this.brand}}</td>
+          <td>{{this.createdAt}}</td>
+          <td>
+            <a href="/products/{{this._id}}/edit">Sửa</a>
+            <a href="/products/{{this._id}}/delete">Xóa</a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+</div>
