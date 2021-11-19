@@ -1,0 +1,157 @@
+<section>
+  <div class="tw-container py-16">
+    <a class="btn-sm bg-blue-500 text-white w-max" href="/products">
+      Quay về trang Products
+    </a>
+
+    <div class="grid lg:grid-cols-2 items-center gap-16 mt-6">
+      <article id="product-photos">
+        <img
+          class="main-product-image-sm md:main-product-image-md lg:main-product-image bg-gray-300 rounded object-cover w-full"
+          src="{{product.img}}"
+        />
+      </article>
+      <article
+        id="product-info"
+        class="capitalize flex flex-col gap-5 lg:gap-4 text-sm md:text-base"
+      >
+        <div>
+          <h2 class="font-bold">
+            {{product.name}}
+          </h2>
+          <div class="mt-3 flex gap-2 items-center">
+            <span class="text-base text-yellow-500 flex">
+              <svg
+                class="w-4 h-4 mr-1"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                ></path>
+              </svg>
+              <svg
+                class="w-4 h-4 mr-1"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                ></path>
+              </svg>
+              <svg
+                class="w-4 h-4 mr-1"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 00-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 00-.163-.505L1.71 6.745l4.052-.576a.525.525 0 00.393-.288l1.847-3.658 1.846 3.658a.525.525 0 00.393.288l4.052.575-2.906 2.77a.564.564 0 00-.163.506l.694 3.957-3.686-1.894a.503.503 0 00-.461 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <svg
+                class="w-4 h-4 mr-1"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 00-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 00-.163-.505L1.71 6.745l4.052-.576a.525.525 0 00.393-.288l1.847-3.658 1.846 3.658a.525.525 0 00.393.288l4.052.575-2.906 2.77a.564.564 0 00-.163.506l.694 3.957-3.686-1.894a.503.503 0 00-.461 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <svg
+                class="w-4 h-4 mr-1"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 00-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 00-.163-.505L1.71 6.745l4.052-.576a.525.525 0 00.393-.288l1.847-3.658 1.846 3.658a.525.525 0 00.393.288l4.052.575-2.906 2.77a.564.564 0 00-.163.506l.694 3.957-3.686-1.894a.503.503 0 00-.461 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <p>
+              (100 Khách hàng đánh giá)
+            </p>
+          </div>
+        </div>
+        <h4 class="font-bold text-lg lg:text-2xl text-blue-400">
+          {{product.price}}
+        </h4>
+        <p class="leading-loose">
+            {{product.description}}
+        </p>
+        <div class="w-3/5 lg:w-2/5 flex flex-col gap-4">
+          <p class="grid grid-cols-2">
+            <span class="font-bold">
+              Mã sản phẩm :
+            </span>
+            {{product.code}}
+          </p>
+          <p class="grid grid-cols-2">
+            <span class="font-bold">
+              Hãng :
+            </span>
+            {{product.brand}}
+          </p>
+        </div>
+        <hr class="my-4 md:my-6" />
+        <div
+          class="text-4xl ml-2 my-3 text-5xl lg:text-4xl grid grid-cols-3 gap-6 w-max items-center"
+        >
+          <button class="w-full h-full p-1">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+              ></path>
+            </svg>
+          </button>
+          <div class="font-bold">
+            1
+          </div>
+          <button class="w-full h-full p-1">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <button class="btn bg-blue-500 text-white md:w-1/2 lg:w-max">
+          Thêm vào giỏ
+        </button>
+      </article>
+    </div>
+
+  </div>
+</section>
