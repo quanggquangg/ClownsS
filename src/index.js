@@ -4,9 +4,23 @@ const path = require('path')
 const handlebars = require('express-handlebars')
 const app = express()
 const port = 3000
+const session = require('express-session')
+const passport = require('passport');
+const flash = require('connect-flash');
 
 const route = require('./routes')
 const db = require('./config/db')
+
+//Authentication
+require('./config/passport');
+app.use(session({
+  secret: 'adsa897adsa98bs',
+  resave: false,
+  saveUninitialized: false,
+  }))
+  app.use(flash());
+  app.use(passport.initialize())
+  app.use(passport.session());
 
 //Connect Db
 db.connect();

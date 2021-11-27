@@ -6,7 +6,7 @@ class ProductsController {
     //GET /News
     index(req, res, next) {
         Product.find({})
-            .then(products => res.render('products', { 
+            .then(products => res.render('products/products', { 
                 products: mutipleMongooseToObject(products)
             }))
             .catch(next)       
@@ -29,7 +29,7 @@ class ProductsController {
         req.body
         const product = new Product(req.body)
         product.save()
-            .then(() => res.redirect('/products'))
+            .then(() => res.redirect('products/products'))
             .catch(erorr => {})
     }
 
