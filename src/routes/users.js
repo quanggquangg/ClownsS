@@ -20,7 +20,10 @@ router.post('/reg',
 
 router.post('/login', passport.authenticate("local.signin", {
     successRedirect : '/', // Khi bạn điền đúng thông tin đăng nhập thì nó sẽ chuyển hướng bạn đến trang chủ
-    failureRedirect : '/users/login',// trở lại trang đăng nhập nếu có lỗi
-    failureFlash : true
+    failureRedirect : '/users/login', // trở lại trang đăng nhập nếu có lỗi
+    failureFlash : true,
+    successFlash: 'Welcome!'
     }));
+
+router.get('/logout', usersController.logout )
 module.exports = router;

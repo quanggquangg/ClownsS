@@ -25,7 +25,7 @@
           </a>
         </li>
         <li>
-          <a href="/login">
+          <a href="/users/login">
             Login
           </a>
         </li>
@@ -33,7 +33,7 @@
     </nav>
     <div>
       <div class="hidden lg:flex gap-8">
-        <a class="flex items-center gap-2 text-2xl lg:text-xl" href="/cart">
+        <a class="flex items-center gap-2 text-2xl lg:text-xl" href="/products/cart">
           Cart
           <div class="relative w-6">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
@@ -43,19 +43,19 @@
               </path>
             </svg>
             <div
-              class="absolute w-6 h-6 text-sm text-blue-500 bg-white lg:bg-blue-500 lg:text-blue-50 rounded-full top-0 right-0 flex justify-center items-center transform translate-x-4 -translate-y-4">
-              0
+              class="absolute w-6 h-6 text-sm text-blue-500 bg-blue bg-blue-500 lg:text-blue-50 rounded-full top-0 right-0 flex justify-center items-center transform translate-x-4 -translate-y-4">
+                {{cart}}
             </div>
           </div>
         </a>
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li><a class="dropdown-item" type="button" href="/products/create">Thêm sản phẩm mới</a></li>
             <li><a class="dropdown-item" type="button" href="/products/listproducts">Sản phẩm của tôi</a></li>
-            <li><a class="dropdown-item" type="button" href="/products/update">Đăng xuất</a></li>
+            <li><a class="dropdown-item" type="button" href="/users/logout">Đăng xuất</a></li>
           </ul>
         </div>
       </div>

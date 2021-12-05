@@ -1,0 +1,73 @@
+
+    <div class="tw-container py-10 flex flex-col md:flex-row gap-10">
+        <section>
+            <div class="sticky top-10 flex flex-col gap-4"><input type="text" placeholder="Search"
+                    class="bg-gray-200 w-5/12 md:w-full py-1 px-2 rounded" value="">
+                <div id="categories">
+                    <h5>Category</h5>
+                    <ul class="mt-2">
+                        <li><a href="/products">
+                            <button class="">ALL</button>
+                            </a></li>
+                        <li class="capitalize">
+                            <a href="/products/laptop">
+                            <button class="underline">Laptop</button>
+                            </a>
+                        </li>
+                        <li class="capitalize">
+                            <a href="/products/screen">
+                            <button class="">Màn hình</button>
+                            </a>
+                        </li>
+                        <li class="capitalize">
+                            <a href="/products/ram">
+                            <button class="">RAM</button>
+                            </a>
+                        </li>
+                        <li class="capitalize">
+                            <a href="/products/disk">
+                            <button class="">Ổ cứng</button>
+                            </a>
+                        </li>
+                        <li class="capitalize">
+                            <a href="/products/phone-accessory">
+                            <button class="">Điện thoại - Phụ kiện</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="w-full">
+            <article id="products-list">
+                <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+
+                    
+                    {{#each products}}
+
+                   {{#if  
+                    (eq this.category "Laptop")}}
+                    <article>
+                        <div class="relative h-48 rounded">
+                            <a href="/products/{{this.slug}}">
+                            <img alt="{{this.name}}"
+                                class="h-full rounded bg-black object-cover w-full"
+                                src="{{this.img}}">
+                            </a>
+                        </div>
+                        <footer class="flex justify-between items-center mt-4 capitalize">
+                            <a href="/products/{{this.slug}}">
+                            <p>{{this.name}}</p>
+                            <p class="text-blue-500 w-full">{{this.price}}</p>
+                            </a>
+                        </footer>
+                    </article>
+                    {{/if}}
+                    
+                    {{/each}}
+
+                </div>    
+            </article>
+        </section>
+    </div>

@@ -28,6 +28,11 @@ class UsersController {
             next();
         }
     }
+
+    logout(req, res, next) {
+        req.session.destroy();
+        res.redirect('/')
+    }
 }
 
 module.exports = new UsersController;

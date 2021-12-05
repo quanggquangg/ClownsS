@@ -3,7 +3,7 @@ const morgan = require('morgan')
 const path = require('path')
 const handlebars = require('express-handlebars')
 const app = express()
-const port = 3000
+const port = 3001
 const session = require('express-session')
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -17,6 +17,7 @@ app.use(session({
   secret: 'adsa897adsa98bs',
   resave: false,
   saveUninitialized: false,
+  cookie: { maxAge: 180 * 60 * 1000 }
   }))
   app.use(flash());
   app.use(passport.initialize())
@@ -40,6 +41,8 @@ app.set('views', path.join(__dirname, 'resources', 'views'))
 app.engine('handlebars', handlebars({
   helpers: {
     sum: (a, b) => a + b,
+    multi:  (a, b) => a * b,
+    eq: (v1, v2) => v1 == v2,
   }
 }))
 

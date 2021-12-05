@@ -3,16 +3,14 @@ const { mutipleMongooseToObject, mongooseToObject } = require('../../util/mongoo
 
 class ProductsController {
     
-    //GET /News
     index(req, res, next) {
         Product.find({})
             .then(products => res.render('products/products', { 
                 products: mutipleMongooseToObject(products)
-            }))
-            .catch(next)       
+            }))  
+            .catch(next) 
     }
 
-    //GET /News/:slug
     show(req, res, next) {
         Product.findOne({ slug: req.params.slug })
             .then(product => res.render('products/show', {
@@ -29,8 +27,8 @@ class ProductsController {
         req.body
         const product = new Product(req.body)
         product.save()
-            .then(() => res.redirect('products/products'))
-            .catch(erorr => {})
+            .then(() => res.redirect('/products/listproducts'))
+            .catch(next)
     }
 
     list(req, res, next) {
@@ -60,6 +58,77 @@ class ProductsController {
             .then(() => res.redirect('/products/listproducts'))
             .catch(erorr => {})
     }
+
+    addToCart(req, res, next) {
+        var slug = req.params.slug;
+        Product.findOne({ slug: slug }, function (err, p) {
+            if (err)
+                console.log(err);
+
+            if (typeof req.session.cart == "undefined") {
+                req.session.cart = [];
+                req.session.cart.push({
+                    title: slug,
+                    qty: 1,
+                    price: parseFloat(p.price).toFixed(2)
+                })
+            } else {
+                var cart = req.session.cart;
+                var newItem = true;
+
+                for (var i = 0; i < cart.length; i++) {
+                    if (cart[i].title == slug) {
+                        cart[i].qty++;
+                        newItem = false;
+                        break;
+                    }
+                }
+
+                if (newItem) {
+                    cart.push({
+                        title: slug,
+                        qty: 1,
+                        price: parseFloat(p.price).toFixed(2)
+                    })
+                }
+            }
+
+            console.log(req.session.cart);
+            var carts = req.session.cart;
+            req.flash('success', 'Product added!')
+            res.redirect('/products')
+        })
+    }
+
+    showCart(req, res, next) {
+        var ship = 0;
+        var total = 0;
+        const carts = req.session.cart
+        console.log(carts);
+        if (typeof req.session.cart !== "undefined") {
+            for (var i = 0; i < carts.length; i++) {
+                total = total + (carts[i].qty * carts[i].price)
+            }
+        }
+        res.render('products/cart', { carts, total, ship } )
+    }
+
+    showLaptop(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/laptop', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+
+    showScreen(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/screen', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+
 }
 
 module.exports = new ProductsController;
