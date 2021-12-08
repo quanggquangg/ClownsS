@@ -37,6 +37,16 @@ class UsersController {
         req.session.destroy();
         res.redirect('/')
     }
+    
+    edit(req, res, next) {
+        res.render('users/edit', req.user)
+    }
+
+    update(req, res, next) {
+        User.updateOne({ email: req.user.email }, req.body)
+            .then(() => res.redirect('/users/information'))
+            .catch(erorr => {})
+    }
 }
 
 module.exports = new UsersController;
