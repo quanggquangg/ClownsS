@@ -5,7 +5,6 @@ const exhandlebars = require('express-handlebars')
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const app = express()
-const port = 3001
 const session = require('express-session')
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -54,6 +53,4 @@ app.engine('handlebars', exhandlebars({
 route(app)
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || 3000)
