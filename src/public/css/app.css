@@ -52,7 +52,6 @@ section .noi-dung{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
     height: 100%;
 }
 
@@ -297,4 +296,27 @@ section .noi-dung .form .icon-dang-nhap li{
   background-color: #3b5998;
 }
 
+.myaccount {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+  padding: 30px;
+}
 
+.AccountTitle {
+ font-weight: bold;
+ padding-bottom: 10px;
+}
+
+.title-detail {
+ font-weight: bold;
+ padding-bottom: 10px;
+}
+
+.orderlist{
+ padding: 20px;
+ border: 30px solid #87c2e4;
+ margin-bottom: 50px;
+ margin-top: 50px;
+}

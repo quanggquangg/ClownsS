@@ -11,6 +11,10 @@ class UsersController {
         res.render('users/reg')
     }
 
+    infomation(req, res, next) {
+        res.render('users/information', req.user)
+    }
+
     signup (req, res, next) {
         var messages = req.flash('error');
         const result= validationResult(req.body);

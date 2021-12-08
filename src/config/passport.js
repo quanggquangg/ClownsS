@@ -40,6 +40,11 @@ passport.use(
         // lưu thông tin cho tài khoản local
         newUser.email = email;
         newUser.password = newUser.encryptPassword(password);
+        newUser.username = req.body.username;
+        newUser.dateofbirth = req.body.dateofbirth;
+        newUser.phonenumber = req.body.phonenumber;
+        newUser.address = req.body.address;
+        newUser.sex = req.body.sex;
         // lưu user
         newUser.save(function (err, result) {
           if (err) {
