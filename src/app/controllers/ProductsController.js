@@ -68,7 +68,7 @@ class ProductsController {
             if (typeof req.session.cart == "undefined") {
                 req.session.cart = [];
                 req.session.cart.push({
-                    title: slug,
+                    title: p.name,
                     qty: 1,
                     price: parseFloat(p.price).toFixed(2)
                 })
@@ -104,7 +104,6 @@ class ProductsController {
         var ship = 0;
         var total = 0;
         const carts = req.session.cart
-        console.log(carts);
         if (typeof req.session.cart !== "undefined") {
             for (var i = 0; i < carts.length; i++) {
                 total = total + (carts[i].qty * carts[i].price)

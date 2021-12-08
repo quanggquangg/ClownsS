@@ -26,4 +26,6 @@ router.post('/login', passport.authenticate("local.signin", {
     }));
 
 router.get('/logout', usersController.logout )
+
+router.get('/information', usersController.infomation )
 module.exports = router;

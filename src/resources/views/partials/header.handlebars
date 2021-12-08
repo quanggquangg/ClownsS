@@ -44,17 +44,17 @@
             </svg>
             <div
               class="absolute w-6 h-6 text-sm text-blue-500 bg-blue bg-blue-500 lg:text-blue-50 rounded-full top-0 right-0 flex justify-center items-center transform translate-x-4 -translate-y-4">
-                {{cart}}
+                
             </div>
           </div>
         </a>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-          
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">{{render}}
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li><a class="dropdown-item" type="button" href="/products/create">Thêm sản phẩm mới</a></li>
             <li><a class="dropdown-item" type="button" href="/products/listproducts">Sản phẩm của tôi</a></li>
+            <li><a class="dropdown-item" type="button" href="/users/information">Thông tin cá nhân</a></li>
             <li><a class="dropdown-item" type="button" href="/users/logout">Đăng xuất</a></li>
           </ul>
         </div>

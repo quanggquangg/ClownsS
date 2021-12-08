@@ -1,9 +1,10 @@
 const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
-const handlebars = require('express-handlebars')
+const exhandlebars = require('express-handlebars')
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const app = express()
-const port = 3001
 const session = require('express-session')
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -35,21 +36,21 @@ app.use(express.json())
 app.use(morgan('combined'))
 
 //Template Engine
-app.engine('handlebars', handlebars());
+app.engine('handlebars', exhandlebars());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'))
-app.engine('handlebars', handlebars({
+app.engine('handlebars', exhandlebars({
   helpers: {
     sum: (a, b) => a + b,
     multi:  (a, b) => a * b,
     eq: (v1, v2) => v1 == v2,
-  }
+    ueq: (v1, v2) => v1 != v2,
+  },
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 }))
 
 //Route init
 route(app)
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || 3000)
