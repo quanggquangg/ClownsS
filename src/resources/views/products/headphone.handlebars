@@ -1,0 +1,110 @@
+
+    <div class="tw-container py-10 flex flex-col md:flex-row gap-10">
+        <section>
+            <div class="sticky top-10 flex flex-col gap-4"><input type="text" placeholder="Search"
+                    class="bg-gray-200 w-5/12 md:w-full py-1 px-2 rounded" value="">
+                <div id="categories">
+                    <ul class="mt-2">
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/laptop"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABCElEQVRYCe2WvQ3CMBCFDfEGIKZAggkoCG2aFNmArWCBFJkgMAASiILU9PxsEBueI8cyyk/jRCk4dCcf58t75itiGKMPEfh3AqM6AHEcf+r6rr0oiip+Y1dR1+d5m0Ddidvmm/baiA5OgA5ABIgAERicQOVySJJkkuf5q+m16tLnnE/DMHzbGj8EtHlqD3RZ44elysPWNATUBgYO2Fwgb8g1LqMnVueA9kxrzyF2BYlNScIQwMAem4U5BvyuzKHJYPZQmqgz5BJeO6xFmAPgm49kQohAPaDqLlNrBlqz8FK1/X/ggsbK87w77m+Uvca5VDcEpJRbNE9IiewrBISPSOWFhYIIEAHGvscTTzWDSKeSAAAAAElFTkSuQmCC"
+                                class="icon m-lr-8"><span class="title">Laptop</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                             <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/disk"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABiklEQVRYCe1VS26EMAx1oGeo+tv2c4qWUa8AbKqebLazAARHqAq9RruqxDGm9DmSK2IompawGiI/4jjOi+clA0RrWxU4dgXMbwIURdFi7gLwYW2apldjRMFYMMuyG8R9bQ4quizL8podjRMd4HEQBI/cG2N2SZI8s/9f5Hm+A8/Tfr9nznfNM6oAkh4AtoYfMyEcwunQDQrous4gYwMQ/JpmtjAMa0KDChH4DFzHBgVAsjtknAKfuDgf6GdZHMcsewuSs6qqbtE7NigA5x8RGip+Q+fF8MtrQsM9iEi1QI15KGfV8MAThEu4f2idAlCpwcwGIPg1eWpT98ApwPf5S/1T98ApYInzlyJEUX0PnAKQLGfUwPdtwil7WH79JrznKKrd4luwZd838O+yewivVuBcJhbsnW+MVsDuixeQsY7nB1TtNKVWwJnnBQwOcs+Y8nmuD+S/Ai/9mPZHFdBJM8bM/3XwelTbMQ5e8MdE5mb0l3GF/bH1dZINLvSYvAML7bnSrgqsCjgKfANHV4tAY/xh2wAAAABJRU5ErkJggg=="
+                                class="icon m-lr-8"><span class="title">Ổ cứng</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/ram"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABB0lEQVRYCe2VQQrCMBBFGxF33fRMnqHgCXoDQVyIeBcXvYJLL5RFd0LjfOFDiE1aU20rpDDMZGaSmXkJNMvSlwgkAjMTUKxf17WhPYUuy/JVezVFsVCNtRtkZ67/W2uX9PIIcFK3U/pBKDbGM2w9O4HeBjAxxO6aNvwQrm0NP8T2ddlvj9BN8uFGXmwMeym9BJj4K+0lEMIXG+saYnkEQvfaNcFY3/IIhO537LTY7xL2PkIk+0QO2UjsLLITyYwxV631qaqqB9afSFQDUvCilNqzkNiHoijwOz/SN1QrJspUOIDLQVoKb9u2FaVugzZYSbzqKAI8R0jc8zxXTdPQlXQikAj8H4EnxohOLQN1x1UAAAAASUVORK5CYII="
+                                class="icon m-lr-8"><span class="title">RAM</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/screen"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABk0lEQVRYCe2WoU/DUBDG26YEgVga5nBIBkgEDkeCXtUcBDyGv2ACB4o0AUcmtmQJAjQCLG4tAjlHQgIEU7o9fkcmWEPbV9ZQ0+W+3b1r39133yXLDKP6VApUCpSsgBnv3+12VTxX5Nl13ameVpHF/1LLTroUZ5r0nm4+SdnSFSidQOIKfkrb6XTqtm0/k7txXXfH87w5x3HeOd9y3kbee+JNIPbJ16tpmu1ms3lCnGpaBGjekCpKqQfxtVptBT8PBsAg37Ysa2ES1/HH5I7wmQR0VyANDaY6ZNoXmt1RXMzv9/uL5C9puMXEPRQ540EEPkCmaRGgQWNS6RrfA0/AGI/Hg9FotEbsQGCINyC4hHfAI8g0LQIUFwVUGIZ7THhAVR+oKIp8SKwTizrLNN8nPgeylivxWdAiQJEGGLZarTe8mBD6PrOOVUmAXeCBDXAaBMEFPr8xhRLkv5l+Q2oK4m/pKhC/V9i5dAJ20ii/yZX07iz50hWYhXwhd6f+HKRVzLsSfi+0alcrSFO9elYp8C8KfAGjIoDt69T2yAAAAABJRU5ErkJggg=="
+                                class="icon m-lr-8"><span class="title">Màn hình</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/graphics-card"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAm0lEQVRYCe2VSwrAIAxE29Izekgv2ZLFbOwYlSDpYgoS8jEmrxKPQ58IJBM42fm11ofZo7ZSyue8K5o0uv/2ErCKvfiezyOaTmCpAOvEltep52f7lgpgCaI29w4gObrCnVjVkYfJdAIqQAREQASmJmFvAmKyjfyIYzL9F0wRQOXoFHorR/423vR/E8CrZ5XuWukEdjWmvCIwTeAFaZMzM/osfb0AAAAASUVORK5CYII="
+                                class="icon m-lr-8"><span class="title">Card màn hình</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/phone-acc"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABF0lEQVRYCe1W0Q2CMBBtDTsY4lYmwAQkOoV1B40zAF/GmdA4RX01NSFyxWttYgwl7wKUe9fH60kVIh1zd0BSBnRdt9ZaH/AsR3Bwk1Jui6I4c5KHOYvhzevac3JDy8E5mgvfyByE55uXZUk69M5p21ZjbIXwBumAd5UvCC4HJku6esQ6QXGdPRLkANbbp0GNIGePBDmAitF6JMgBCIiGJCA5kBz4uQPsD1HTNApb7i7aB8AW+h8HqqpSQgglcExsOnjqh8yRfsf4MuZEqEeCFIDdrsZ6n8Bg/8kY9gj4e+sYSkyDFADyBTQTOI0R0xlSwHjKzyMQrYTtEZzZCBUQ0iNXSlXQzxBrXKNYj+CiB2fDTU5583LgAZN0WUcJ77MSAAAAAElFTkSuQmCC"
+                                class="icon m-lr-8"><span class="title">Điện thoại - Phụ kiện</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/mouse"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC4ElEQVRYCe2WTWtTQRSGb9I2LpIIdlVciFQEQxFE/AstWvxqIckPqAi6iFXaZaEL3VhaiisjddNlqrWlUqEV8gNEXViyEepOEEJchCyamlyf9yYt/bgz+bALoQ3nzZk5c94zZ86dO3cc5+R33CsQaKUAq6urp4rFYjwQCAzBuwLOAMlv/r5ifxcOh98MDg5u0W9Kmk5gYWEh7rruc6Ked+y/H67rjieTybd2t9powwQymUwHK5shaKpGcTbovwbr5XL5l2zBYLCHfj8Yod8HHPxn6Y8lEomK+iZ0mgZ27ASZIpgmL6Of0H8Zj8e9oCTnyo9JtJAN+i8Yf4jfNHoU/GF8HBhFROMgZR8mmEq5hb5JWT/udWbCvQnsDsEbwH8FQxf6Djy16R6W4GFTzULwEOSpWs9JEWTf5HW7r6JCawyMAooQmE6n0120fcWYAMxhGL3gWy6Xm0O3Kq8g5MDF7u7uu2hfCfpaMbJ6j4Sem5ycrGJqSdgXFXFFQnux1D4I2ya8KmfI69J+YBLrHhKXSorqxVLjIGwJ9MiZVyzHflDzX3DWRDY+AghRcFRy2hTIVgGP06jMnpPlj+p5r6rJxVYBE+dI7f91AiUtdX5+PizdDpaXl3f2UdHEt1Xgp0ihUOicdDvY3t7e4Xqx/GLYEvgiAu9xv3Q7qFQqA3Xe57o+pIwJMPGSvNH3OAmNfvLxQzab7YR7X2NoL5baB2EMzCm2iPMmuByLxfSdp9m85PP5R3hfAt8LhYIxAetRyjs8RAAloivWLc4E47GM367Au05nBegyc5uv43vavmJNQAy+7boNPaa9eyEhEe9Cgm2fMHEHhgdgBugu8JTP+ARtozRMQEF5hkoiVY/iXcl4RGulUkmPyIlGoxe04fAbwacPSJ6x8gls1pOwYQKKJFCJpi+lTDrG5IviNULTCSiQruWseqhard5gkmvYeoFkk/4nqvIhEokstXItF/kEx7sCfwGbigXtU2vy3gAAAABJRU5ErkJggg=="
+                                class="icon m-lr-8"><span class="title">Chuột máy tính</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/keyboard"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAA8klEQVRYCe2Wyw3CMBBEHUQVSAgp7XBPSoALzXCAHlIA5XBB0IaZF7EcIvMVrHNw5PF615FnPLKVhFCe4kBxILMDFfxd1y0Vt0IteLRjjHHTtu1hcmPbK9aCV6urqtpBNqUT5kJomqZ3hPE/Icej1l8IYUKXE0kBKAQmjDH4VW7rEJMCmHAFuwNepHAB+LI7YLcAMXeYOivY7bD6p/lwHcuJ2R1ARGBnoE8cOrgAVNkd+OoMoPwZhmfE3rW65cRxOpBSitpHdeZSeOf90Thw0Q5mdjI19mgnSHoH9G1eKUGEgks764dk7cJUSIoDxYFXDlwBKbp4IYpCX9QAAAAASUVORK5CYII="
+                                class="icon m-lr-8"><span class="title">Bàn phím</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/headphone"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACWUlEQVRYCe2VzYvTYBDGk9QiiEFRXFD35EHYqwiKaMWLYEFCLPTjqv+A6MmD4MW7f4Ainkpa2rIUCiIo+wG7hz3vYRE8iC4qWMvaFulH/E15Kc02SbtbZfeQMg/PvPPOM5lM3qSaFv2iCRzwBPS9XL9cLs91Oh1L1/U76C6COeCCH2CLeM113cV0Oi1rQpNtqgZqtdrRZrP5iOJPKGmCMNsh77lpmi+SyeSfsETZm9hAPp8/F4vFyiRfAWJvuVMHrBqG8VMC/X7/VK/Xu0Esw/o2EFtHdy+VSm3LIgihDZRKpXkKryGeB5tc6EE2m13HD7RisXiNCbwkYQF8Rn81l8t9xfe1wAaq1eqxdru9guoSWAIWz7YBT7RKpXKSs7JIYgJsgATaNjxmxlhEBVqt1mNcufgWxWwKNFhPZbZt/yLRBh/BZR7NQ9jXdL8op/10t9v9xJ7JOG9mMpll/D2b4zi3dF1/j7ABLnATgzODPzRj6I04PDebpZz2d/u9OHoN7QdYGjhBIxb+mPk2wF3fVZmO4lloUGOkpqeWbwNkLACNUy+HUNx9g1d1WYkHNZU/JGPoeZ2zskQc+PrI/jSIx+NfVN55xR4KauC4ZHFofgvPAsuydpTeVOyhoAY8Sf9zcSSseKFQcEf3mYjvazuaI/5uncSCcOATCG1A7lgQ1P2kuGgFYXmhDYQJ/9Ve1EDQBL7JiDnN14VnAX9ICaXfVuwh3wb4br9RWSs04XkVVXwqEi1/QkuSDL8W3g3f7wDJTwF9uPcRnAGz2HcKvarX68+06BdN4DBO4C+iMLzGuKll0wAAAABJRU5ErkJggg=="
+                                class="icon m-lr-8"><span class="title text-blue-500">Tai nghe</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/speaker"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC1ElEQVRYCe2Wy2sTURTGbx7LSgVfQQu6aDdNQUU3QhclVbAYFwkapI0bRSK4F0GE0o0LKagbdy4T0pikAbFUjQUjKEq1iAnFP8BX0Yh0k6Qx/s6QQOudCZOHFKHl++a7c+6555x7JnM7Sm39/e8dmJmZ8XSyB2cni5PJZB/rc7BttF0AO99XrVYXyNwP20ZbBUSj0T1kfAw7Ss565ZZLK5Sd4y87H0A7RksdSKVSu8k4DyV5Hm0Kir0G+5s52S5Akq+trWUJ5oUFxqOoJeLxeJjJm3A2k8lsQ01hq4BYLLaXhDkiDMHFSqUyPD4+/pWxJRwOxyyT76G3XC5fR03hNrPStpqZHdsy9E9MTBRRU7DzG0y8CIVCC8S5xPhVrVa7wnga2wr3G2CrA/UVyy6Xy0eQL/V7TRKJxBg7n4JREvbg+xqnh7AHnoEaTDvQ8CKAozG2o/l8fn5wcPAlvsfgRXgHJuBp6If34Aa00oENC81uJicnf9Pu6frcmCiHVU4UeqGGrhYg0Wn/W1E4AFVvb+9nVH5THorTOtr1AkjWgBF7dXVVVBLXKE4KacwbKpPGoIuXI/VYH0WdTmefKPwENfyLAi5LFnY7J0rbfaJwCWpo+hbwKq1v2Tu3230iGAx+16LUDfifYjgKf5RKpfuoooBzovAR1ODULNaGw5yGTzmSd1i5FAqFOXZ+F14Ih8O/KMiH74hSqsjpmUI1yI9DM/5tINAubM/gEFyiE8elE9iNDpmdF/zL3onfG/wPKKWuhkKhW6gGp2YxMbB4hWDS2g9MH6ITWUnA2BL4jyil9sPnxWLxNmoKWwXISnb8jaBSRJ77g4yzqCUo+gGP4jx+ZyORSMXK0dYjWL84nU5v53k+wXYUGiBZy3GMhVxsdwBfA4FA4CePwM9NAXaMlguQjPItQBeGGS/CjtBWAZJRvgnoxEnG8tGBbBJ4FT2blHorbXc68AcWneVC6Bh/PwAAAABJRU5ErkJggg=="
+                                class="icon m-lr-8"><span class="title">Loa - Âm thanh</span></a></div>
+                        </li>
+                        <li class="capitalize">
+                            <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
+                            href="/products/camera"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAACcUlEQVRYCe2Uv4sTURDHd5NLTEwKr7BRsBLRwpyHzaUQC7EJBowkITG24g8QrvP+AxWttPBEJKCG/ABJEUnnj0pP5BAPEREbC20jJiTkl/EzYffIXTa7L5ydWebLzPvOzJt5s/tW02bPbAL/+wR01QFUKpXdrVZrjfijwE42/H5/OBqNNu2CTJ/LNJw0xVeJcSpOiBZqNpv3xVDBlgmUSqWBQ1LL5XItxePxDau4QqGwgF+m5LPym1wymdysqzwBI3l5UnHxp1Kpj7quL4utijmrwNEOrfx2XCKReIBfgNoqVhO2bMBMI+EV9h8aOoUeSrVa3VWv169x0gsQB4DId13Xnw4Gg3vEdoRQhdMrkAYFw/1oaH+j0XhLsdsQC2DewDGK38F+k8/n96GVxbYBTnMCnJTdstmsfFhV7EXwlSbO9nq9vQLW58A3cNztdj+XKWEryebpnKIDgcBVYkLgi8fjCcdisV/YppRzudxr+DWIRV7RJfRd4Ci2E9iWnZY1J1/ZVlxoLZPJ1DBWgEbMedEqmKaBw7Kh1+t9KXoCTN+RCf4xepoGhj+Pdrs9GNtlnBjGjtPjzDQNfJZ0xrt5JWU9ihHfp1Hezp6mgceyEdftZrlc3iP2KPgI5/HdMLgnhnZUyrcgGAw+5B9wkR1D3W73XbFYvO7z+V6w1jqdzmmK38I+CD6AR0BJXEpRBEUikbYoIAUOMe4y38NvAcWfwUvx9X6/f4Z/R4e1kig3ILux8Q/0EgWvoNeBNCV4T0OXa7VaOJ1O/4RXljnlSCOQJuR0qywFqJ2JZQP881Wu2s4qG9lTvQIjZ6ZmE5hN4J9O4C8mbLicE133vwAAAABJRU5ErkJggg=="
+                                class="icon m-lr-8"><span class="title">Máy ảnh - Camera</span></a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="w-full">
+            <article id="products-list">
+                <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+
+                    
+                    {{#each products}}
+
+                   {{#if  
+                    (eq this.category "Headphone")}}
+                    <article>
+                        <div class="relative h-48 rounded">
+                            <a href="/products/{{this.slug}}">
+                            <img alt="{{this.name}}"
+                                class="h-full rounded bg-black object-cover w-full"
+                                src="{{this.img}}">
+                            </a>
+                        </div>
+                        <footer class="flex justify-between items-center mt-4 capitalize">
+                            <a href="/products/{{this.slug}}">
+                            <p>{{this.name}}</p>
+                            <p class="text-blue-500 w-full">{{this.price}}</p>
+                            </a>
+                        </footer>
+                    </article>
+                    {{/if}}
+                    
+                    {{/each}}
+
+                </div>    
+            </article>
+        </section>
+    </div>
