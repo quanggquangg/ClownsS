@@ -126,8 +126,72 @@ class ProductsController {
                 products: mutipleMongooseToObject(products)
             }))  
             .catch(next) 
+    }   
+
+    showCamera(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/camera', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
     }
 
+    showSpeaker(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/speaker', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showRam(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/ram', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showMouse(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/mouse', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showKeyboard(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/keyboard', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showHeadphone(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/headphone', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showDisk(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/disk', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showGraphicscard(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/graphics-card', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
+    showPhoneacc(req, res, next) {
+        Product.find({})
+            .then(products => res.render('products/phone-acc', { 
+                products: mutipleMongooseToObject(products)
+            }))  
+            .catch(next) 
+    }
 }
 
 module.exports = new ProductsController;
