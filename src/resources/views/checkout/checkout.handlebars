@@ -1,8 +1,7 @@
     <main role="main">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
-            <form class="needs-validation" name="frmthanhtoan" method="GET"
-                action="/checkout/finish">
+            <form method="POST" action="/order/store">
                 <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
 
                 <div class="py-5 text-center">
@@ -22,7 +21,9 @@
                             {{#each carts}}
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
-                                    <h6 class="my-0">{{this.title}}</h6>
+                                    <h6 name="listProducts" class="my-0">{{this.title}}</h6>
+                                    <input type="text" class="form-control" name="qtyProduct" id="qtyProduct"
+                                    value="{{this.qty}}" readonly="" style="display: none">
                                     <small class="text-muted">{{this.price}} x {{this.qty}}</small>
                                 </div>
                                 <div>
@@ -33,7 +34,10 @@
 
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Tổng thành tiền</span>
-                                <strong>{{total}}</strong>
+                                <strong>
+                                    <input type="text" class="form-control" name="total" id="total"
+                                    value="{{total}}" readonly="">
+                                </strong>
                             </li>
                             
 
@@ -46,8 +50,8 @@
                         {{#with user}}
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="kh_ten">Họ tên</label>
-                                <input type="text" class="form-control" name="kh_ten" id="kh_ten"
+                                <label for="usernameOrder">Họ tên</label>
+                                <input type="text" class="form-control" name="usernameOrder" id="usernameOrder"
                                     value="{{this.username}}" readonly="">
                             </div>
                             <div class="col-md-12">
@@ -56,18 +60,18 @@
                                     readonly="">
                             </div>
                             <div class="col-md-12">
-                                <label for="kh_diachi">Địa chỉ</label>
-                                <input type="text" class="form-control" name="kh_diachi" id="kh_diachi"
+                                <label for="addressOrder">Địa chỉ</label>
+                                <input type="text" class="form-control" name="addressOrder" id="addressOrder"
                                     value="{{this.address}}" readonly="">
                             </div>
                             <div class="col-md-12">
-                                <label for="kh_dienthoai">Điện thoại</label>
-                                <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai"
+                                <label for="phonenumberOrder">Điện thoại</label>
+                                <input type="text" class="form-control" name="phonenumberOrder" id="phonenumberOrder"
                                     value="{{this.phonenumber}}" readonly="">
                             </div>
                             <div class="col-md-12">
-                                <label for="kh_email">Email</label>
-                                <input type="text" class="form-control" name="kh_email" id="kh_email"
+                                <label for="emailOrder">Email</label>
+                                <input type="text" class="form-control" name="emailOrder" id="emailOrder"
                                     value="{{this.email}}" readonly="">
                             </div>
                             <div class="col-md-12">

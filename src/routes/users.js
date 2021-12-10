@@ -27,6 +27,8 @@ router.post('/login', passport.authenticate("local.signin", {
 
 router.get('/logout', usersController.logout )
 router.get('/information', usersController.infomation )
+router.get('/historyOrder', usersController.historyOrder )
+router.get('/order', usersController.order )
 router.get('/edit', usersController.edit )
 router.post('/edit', usersController.update )
 module.exports = router;

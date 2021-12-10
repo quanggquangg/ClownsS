@@ -77,7 +77,7 @@ class ProductsController {
                 var newItem = true;
 
                 for (var i = 0; i < cart.length; i++) {
-                    if (cart[i].title == slug) {
+                    if (cart[i].title == p.name) {
                         cart[i].qty++;
                         newItem = false;
                         break;
@@ -86,7 +86,7 @@ class ProductsController {
 
                 if (newItem) {
                     cart.push({
-                        title: slug,
+                        title: p.name,
                         qty: 1,
                         price: parseFloat(p.price).toFixed(2)
                     })

@@ -1,0 +1,35 @@
+<div class="customer-table-wrap">
+    <div class="orderlist">
+        <p class="title-detail" style="text-align: center;">Danh sách đơn hàng mới nhất</p>
+        <div class="table-responsive-overflow">
+            <div class="table-responsive">
+                <table class="table table-customers">
+                    <thead>
+                        <tr>
+                            <th class="order_number text-center">Mã đơn hàng</th>
+                            <th class="date text-center">Ngày đặt</th>
+                            <th class="total text-right">Thành tiền</th>
+                            <th class="payment_status text-center">Trạng thái thanh toán</th>
+                            <th class="fulfillment_status text-center">Vận chuyển</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each orders}}
+                        <tr class="odd ">
+                            <td class="text-center"><a href="/order/{{this._id}}"
+                                    title="">{{this._id}}</a></td>
+                            <td class="text-center"><span>{{this.createdAt}}</span></td>
+                            <td class="text-right"><span class="total money">{{this.total}}</span></td>
+                            <td class="text-center"><span class="status_paid">Chưa thanh toán</span></td>
+                            <td class="text-center"><span class="status_fulfilled">{{this.status}}</span></td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

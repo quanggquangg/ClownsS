@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Order = require('../models/Order')
 const { mutipleMongooseToObject, mongooseToObject } = require('../../util/mongoose')
 const { validationResult } = require('express-validator');
 
@@ -13,6 +14,16 @@ class UsersController {
 
     infomation(req, res, next) {
         res.render('users/information', req.user)
+    }
+
+    historyOrder(req, res, next) {
+        const user = req.user
+        const emailOrder = user.email
+        Order.find({emailOrder})
+            .then(orders => res.render('users/historyOrder', { 
+                orders: mutipleMongooseToObject(orders)
+            }))  
+            .catch(next) 
     }
 
     signup (req, res, next) {
@@ -46,6 +57,14 @@ class UsersController {
         User.updateOne({ email: req.user.email }, req.body)
             .then(() => res.redirect('/users/information'))
             .catch(erorr => {})
+    }
+
+    order(req, res, next) {
+        Order.find()
+            .then(orders => res.render('users/order', { 
+                orders: mutipleMongooseToObject(orders)
+            }))  
+            .catch(next) 
     }
 }
 
