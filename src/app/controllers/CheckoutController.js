@@ -14,6 +14,10 @@ class CheckoutController {
         }
         res.render('checkout/checkout', { user , carts , total } )
     }
+
+    finish(req, res, next) {
+        res.render('checkout/finish')
+    }
 }
 
 module.exports = new CheckoutController;

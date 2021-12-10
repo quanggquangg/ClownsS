@@ -1,8 +1,8 @@
     <main role="main">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
-            <form class="needs-validation" name="frmthanhtoan" method="post"
-                action="#">
+            <form class="needs-validation" name="frmthanhtoan" method="GET"
+                action="/checkout/finish">
                 <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
 
                 <div class="py-5 text-center">
@@ -38,13 +38,6 @@
                             
 
                         </ul>
-
-
-                        <div class="input-group">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-secondary">Xác nhận</button>
-                            </div>
-                        </div>
 
                     </div>
                     <div class="col-md-8 order-md-1">
