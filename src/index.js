@@ -1,6 +1,5 @@
 const express = require('express')
 var port = 3000
-const morgan = require('morgan')
 const path = require('path')
 const exhandlebars = require('express-handlebars')
 const Handlebars = require('handlebars')
@@ -12,7 +11,6 @@ const flash = require('connect-flash');
 
 const route = require('./routes')
 const db = require('./config/db')
-const { count } = require('console')
 
 //Authentication
 require('./config/passport');
@@ -33,9 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(express.urlencoded());
 app.use(express.json())
-
-//HTTP logger
-app.use(morgan('combined'))
 
 //Template Engine
 app.engine('handlebars', exhandlebars());
