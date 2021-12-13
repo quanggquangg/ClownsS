@@ -5,9 +5,10 @@ const checkoutRouter = require('./checkout')
 const orderRouter = require('./order')
 const express = require('express')
 const app = express()
+const { countCart } = require('../middleware')
 
 function route(app) {  
-    app.use('/', homeRouter)
+    app.use('/', countCart, homeRouter)
 
     app.use('/products', productsRouter)
     
@@ -16,7 +17,6 @@ function route(app) {
     app.use('/checkout', checkoutRouter)
 
     app.use('/order', orderRouter)
-
 }
 
 module.exports = route;

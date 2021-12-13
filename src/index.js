@@ -12,6 +12,7 @@ const flash = require('connect-flash');
 
 const route = require('./routes')
 const db = require('./config/db')
+const { count } = require('console')
 
 //Authentication
 require('./config/passport');
