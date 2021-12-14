@@ -12,7 +12,11 @@ class CheckoutController {
                 total = total + (carts[i].qty * carts[i].price)
             }
         }
+        if (typeof user !== "undefined") {
         res.render('checkout/checkout', { user , carts , total } )
+        } else {
+            res.redirect('/users/login')
+        }
     }
 
     finish(req, res, next) {

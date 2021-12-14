@@ -6,9 +6,10 @@ const orderRouter = require('./order')
 const express = require('express')
 const app = express()
 const { countCart } = require('../middleware')
+const { loginAuth } = require('../middleware')
 
 function route(app) {  
-    app.use('/', countCart, homeRouter)
+    app.use('/', countCart, loginAuth, homeRouter)
 
     app.use('/products', productsRouter)
     

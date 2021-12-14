@@ -24,11 +24,15 @@
             Products
           </a>
         </li>
+
+        {{#if (eq user undefined)}}
         <li>
           <a href="/users/login">
             Login
           </a>
         </li>
+        {{/if}}
+
       </ul>
     </nav>
     <div>
@@ -48,8 +52,10 @@
             </div>
           </div>
         </a>
+
+        {{#if (ueq user undefined)}}
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">{{render}}
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">{{user.email}}
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li><a class="dropdown-item" type="button" href="/products/create">Thêm sản phẩm mới</a></li>
@@ -59,6 +65,8 @@
             <li><a class="dropdown-item" type="button" href="/users/logout">Đăng xuất</a></li>
           </ul>
         </div>
+        {{/if}}
+
       </div>
       <button class="btn-lg lg:hidden border-0 bg-transparent text-blue-500">
         <i class="fa-lg md:fa-2x fas fa-bars"></i>

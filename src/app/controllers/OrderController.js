@@ -19,6 +19,7 @@ class OrderController {
         order.save()
             .then(() => res.redirect('/checkout/finish'))
             .catch(next)
+        req.session.cart = undefined
     }
 
     showOrder(req, res, next) {
@@ -27,6 +28,20 @@ class OrderController {
             order: mongooseToObject(order)
         }))
         .catch(next)
+    }
+
+    editOrder(req, res, next) {
+        Order.findById(req.params.slug)
+        .then(order => res.render('orders/editOrder', {
+            order: mongooseToObject(order)
+        }))
+        .catch(next)
+    }
+
+    saveOrder(req, res, next) {
+        Order.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect('/users/order'))
+            .catch(erorr => {})
     }
 
 }
