@@ -8,9 +8,7 @@
                     <ul class="mt-2">
                         <li class="capitalize">
                             <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
-                            href="/products/laptop"><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABCElEQVRYCe2WvQ3CMBCFDfEGIKZAggkoCG2aFNmArWCBFJkgMAASiILU9PxsEBueI8cyyk/jRCk4dCcf58t75itiGKMPEfh3AqM6AHEcf+r6rr0oiip+Y1dR1+d5m0Ddidvmm/baiA5OgA5ABIgAERicQOVySJJkkuf5q+m16tLnnE/DMHzbGj8EtHlqD3RZ44elysPWNATUBgYO2Fwgb8g1LqMnVueA9kxrzyF2BYlNScIQwMAem4U5BvyuzKHJYPZQmqgz5BJeO6xFmAPgm49kQohAPaDqLlNrBlqz8FK1/X/ggsbK87w77m+Uvca5VDcEpJRbNE9IiewrBISPSOWFhYIIEAHGvscTTzWDSKeSAAAAAElFTkSuQmCC"
-                                class="icon m-lr-8"><span class="title">Laptop</span></a></div>
+                            href="/products/laptop"><i class="fas fa-laptop"></i><span class="title">Laptop</span></a></div>
                         </li>
                         <li class="capitalize">
                              <div class="w-100 p-lr-8 p-tb-4  Filter-menu-item"><a class="d-flex align-i-center"
@@ -87,20 +85,19 @@
                    {{#if  
                     (eq this.category "Speaker")}}
                     <article>
-                        <div class="relative h-48 rounded">
-                            <a href="/products/{{this.slug}}">
-                            <img alt="{{this.name}}"
-                                class="h-full rounded bg-black object-cover w-full"
-                                src="{{this.img}}">
-                            </a>
-                        </div>
-                        <footer class="flex justify-between items-center mt-4 capitalize">
-                            <a href="/products/{{this.slug}}">
-                            <p>{{this.name}}</p>
+                    <div class="relative h-48 w-48">
+                        <a href="/products/{{this.slug}}">
+                            <img alt="{{this.name}}" class="h-full rounded bg-black" src="{{this.img}}"
+                                style="border: solid 1px #CCC" />
+                        </a>
+                    </div>
+                    <footer class="flex items-center mt-4 capitalize w-48" >
+                        <a href="/products/{{this.slug}}">
+                            <h6>{{this.name}}</h6>
                             <p class="text-blue-500 w-full">{{this.price}}</p>
-                            </a>
-                        </footer>
-                    </article>
+                        </a>
+                    </footer>
+                </article>
                     {{/if}}
                     
                     {{/each}}

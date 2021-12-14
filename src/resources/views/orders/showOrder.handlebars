@@ -1,9 +1,187 @@
+<style>
+    ul {
+        list-style: none;
+        margin-bottom: 0px
+    }
+
+    .button {
+        display: inline-block;
+        background: #0e8ce4;
+        border-radius: 5px;
+        height: 48px;
+        -webkit-transition: all 200ms ease;
+        -moz-transition: all 200ms ease;
+        -ms-transition: all 200ms ease;
+        -o-transition: all 200ms ease;
+        transition: all 200ms ease
+    }
+
+    .button a {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 48px;
+        color: #FFFFFF;
+        padding-left: 35px;
+        padding-right: 35px
+    }
+
+    .button:hover {
+        opacity: 0.8
+    }
+
+    .cart_section {
+        width: 100%;
+        padding-top: 93px;
+        padding-bottom: 111px
+    }
+
+    .cart_title {
+        font-size: 30px;
+        font-weight: 500
+    }
+
+    .cart_items {
+        margin-top: 8px
+    }
+
+    .cart_list {
+        border: solid 1px #e8e8e8;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff
+    }
+
+    .cart_item {
+        width: 100%;
+        padding: 15px;
+        padding-right: 46px
+    }
+
+    .cart_item_image {
+        width: 133px;
+        height: 133px;
+        float: left
+    }
+
+    .cart_item_image img {
+        max-width: 100%
+    }
+
+    .cart_item_info {
+        width: calc(100% - 133px);
+        float: left;
+        padding-top: 18px
+    }
+
+    .cart_item_name {
+        margin-left: 7.53%
+    }
+
+    .cart_item_title {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.5)
+    }
+
+    .cart_item_text {
+        font-size: 18px;
+        margin-top: 35px
+    }
+
+    .cart_item_text span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 11px;
+        -webkit-transform: translateY(4px);
+        -moz-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+        -o-transform: translateY(4px);
+        transform: translateY(4px)
+    }
+
+    .cart_item_price {
+        text-align: right
+    }
+
+    .cart_item_total {
+        text-align: right
+    }
+
+    .order_total {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        border: solid 1px #e8e8e8;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        padding-right: 46px;
+        padding-left: 15px;
+        background-color: #fff
+    }
+
+    .order_total_title {
+        display: inline-block;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 60px
+    }
+
+    .order_total_amount {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 26px;
+        line-height: 60px
+    }
+
+    .cart_buttons {
+        margin-top: 60px;
+        text-align: right
+    }
+
+    .cart_button_clear {
+        display: inline-block;
+        border: none;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 48px;
+        color: rgba(0, 0, 0, 0.5);
+        background: #FFFFFF;
+        border: solid 1px #b2b2b2;
+        padding-left: 35px;
+        padding-right: 35px;
+        outline: none;
+        cursor: pointer;
+        margin-right: 26px
+    }
+
+    .cart_button_clear:hover {
+        border-color: #0e8ce4;
+        color: #0e8ce4
+    }
+
+    .cart_button_checkout {
+        display: inline-block;
+        border: none;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 48px;
+        color: #FFFFFF;
+        padding-left: 35px;
+        padding-right: 35px;
+        outline: none;
+        cursor: pointer;
+        vertical-align: top;
+    }
+</style>
 <div class="container">
     <div class="wrapbox-heading-account">
         <div class="header-page clearfix">
             <h1>Chi tiết đơn hàng </h1>
         </div>
     </div>
+    <br>
     <div class="wrapbox-content-account">
         <div class="row">
             <div class="col-xs-12 col-md-3 col-sm-12 sidebar-account">
@@ -12,9 +190,8 @@
                     <div class="AccountContent">
                         <div class="AccountList">
                             <ul class="list-unstyled">
-                                <li class="current"><a href="/account">Thông tin tài khoản</a></li>
-                                <li><a href="/account/addresses">Danh sách địa chỉ</a></li>
-                                <li class="last"><a href="/account/logout">Đăng xuất</a></li>
+                                <li class="current"><a href="/users/information">Thông tin tài khoản</a></li>
+                                <li class="last"><a href="/users/logout">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </div>
@@ -30,86 +207,79 @@
                 <div class="row">
                     <div class="col-xs-12 content-page ">
                         <div class="customer-table-wrap">
-                            <div class="customer-table-bg">
-                                <p class="title-detail">Chi tiết đơn hàng </p>
-                                <div class="wrap-table-orderline table-responsive-overflow">
-                                    <div class="table-responsive">
-                                        <table id="order_details" class="table table-customers ">
-                                            <thead>
-                                                <tr>
-                                                    <th class=""></th>
-                                                    <th class="">Sản phẩm</th>
-                                                    <th class="text-center">Đơn giá</th>
-                                                    <th class="text-center">Số lượng</th>
-                                                    <th class="total text-right">Thành tiền</th>
-                                                </tr>
-                                            </thead>
+                            <div class="cart_items">
+                                <ul class="cart_list">
+                                    {{#each order.listProducts}}
+                                    <li class="cart_item clearfix">
+                                        <div class="cart_item_image"><img src="{{this.imgProduct}}" alt=""></div>
+                                        <div
+                                            class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                            <div class="cart_item_name cart_info_col">
+                                                <div class="cart_item_title">Name</div>
+                                                <div class="cart_item_text">{{this.nameProduct}}</div>
+                                            </div>
+                                            <div class="cart_item_quantity cart_info_col">
+                                                <div class="cart_item_title">Quantity</div>
+                                                <div class="cart_item_text">{{this.qtyProduct}}</div>
+                                            </div>
+                                            <div class="cart_item_price cart_info_col">
+                                                <div class="cart_item_title">Price</div>
+                                                <div class="cart_item_text">{{tLS this.priceProduct}}</div>
+                                            </div>
+                                            <div class="cart_item_total cart_info_col">
+                                                <div class="cart_item_title">Total</div>
+                                                <div class="cart_item_text">{{tLS (multi this.qtyProduct this.priceProduct)}}</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            <div class="wrap-table-ordership">
+                                <table class="table table-customers table-customers-summary ">
+                                    <tbody>
+                                        <tr class="order_summary ">
+                                            <td class="text-left" colspan="4"><b>Giá sản phẩm</b></td>
+                                            <td class="total money text-right"><b>{{order.total}}₫</b></td>
+                                        </tr>
 
-                                            <tbody>
-
-                                                {{#each order.listProducts}}
-                                                <tr id="1021840395" class="line-order odd">
-                                                    <td class="order-image">
-                                                    </td>
-                                                    <td class="name" style="max-width:300px">
-                                                        <a href="/products/{{this.nameProduct}}" title="">{{this.nameProduct}}</a>
-                                                        <br>
-                                                    </td>
-                                                    <td class="money text-center">{{tLS (multi this.priceProduct 1)}}₫</td>
-                                                    <td class="quantity center text-center">{{this.qtyProduct}}</td>
-                                                    <td class="total money text-right">{{tLS (multi this.priceProduct this.qtyProduct)}}₫</td>
-                                                </tr>
-                                                {{/each}}
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="wrap-table-ordership">
-                                    <table class="table table-customers table-customers-summary ">
-                                        <tbody>
-                                            <tr class="order_summary ">
-                                                <td class="text-left" colspan="4"><b>Giá sản phẩm</b></td>
-                                                <td class="total money text-right"><b>{{order.total}}₫</b></td>
-                                            </tr>
-
-                                            <tr class="order_summary ">
-                                                <td class="text-left" colspan="4"><b>Ship</b></td>
-                                                <td class="total money text-right"><b>0₫</b></td>
-                                            </tr>
+                                        <tr class="order_summary ">
+                                            <td class="text-left" colspan="4"><b>Ship</b></td>
+                                            <td class="total money text-right"><b>0₫</b></td>
+                                        </tr>
 
 
-                                            <tr class="order_summary order_total">
-                                                <td class="text-left" colspan="4"><b>Tổng tiền</b></td>
-                                                <td class="total money text-right"><b>{{order.total}}₫</b></td>
-                                            </tr>
+                                        <tr class="order_summary order_total">
+                                            <td class="text-left" colspan="4"><b>Tổng tiền</b></td>
+                                            <td class="total money text-right"><b>{{order.total}}₫</b></td>
+                                        </tr>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div class="customer-status-order">
-                            <div class="row">
-                                <div id="order_payment" class="col-md-6 col-sm-6 order-payment">
-                                    <div class="alert alert-info">
-                                        <span class="text_status">Tình trạng thanh toán:</span> <span
-                                            class="status_paid">Chưa thanh toán</span>
-                                    </div>
+                    </div>
+                    <div class="customer-status-order">
+                        <div class="row">
+                            <div id="order_payment" class="col-md-6 col-sm-6 order-payment">
+                                <div class="alert alert-info">
+                                    <span class="text_status">Tình trạng thanh toán:</span> <span
+                                        class="status_paid">Chưa thanh toán</span>
                                 </div>
-                                <div id="order_shipping" class="col-md-6 col-sm-6 order-shipping">
-                                    <div class="alert alert-info">
-                                        <span class="text_status">Trạng thái đơn hàng:</span>
-                                        <span class="status_fulfilled">{{order.status}}</span>
-
-                                    </div>
-                                </div>
-
                             </div>
+                            <div id="order_shipping" class="col-md-6 col-sm-6 order-shipping">
+                                <div class="alert alert-info">
+                                    <span class="text_status">Trạng thái đơn hàng:</span>
+                                    <span class="status_fulfilled">{{order.status}}</span>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>

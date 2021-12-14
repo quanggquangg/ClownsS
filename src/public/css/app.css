@@ -320,3 +320,16 @@ section .noi-dung .form .icon-dang-nhap li{
  margin-bottom: 50px;
  margin-top: 50px;
 }
+
+h6 { width:100%;
+  white-space: pre-wrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+   display: -webkit-box;
+}
+
+.gap-20 {
+  gap: 5rem;
+}

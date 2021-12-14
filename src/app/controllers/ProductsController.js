@@ -68,6 +68,8 @@ class ProductsController {
             if (typeof req.session.cart == "undefined") {
                 req.session.cart = [];
                 req.session.cart.push({
+                    id: p._id,
+                    img: p.img,
                     title: p.name,
                     qty: 1,
                     price: (parseFloat(p.price).toFixed(2) * 1000000)
@@ -86,9 +88,11 @@ class ProductsController {
 
                 if (newItem) {
                     cart.push({
+                        id: p._id,
+                        img: p.img,
                         title: p.name,
                         qty: 1,
-                        price: p.price
+                        price: (parseFloat(p.price).toFixed(2) * 1000000)
                     })
                 }
             }

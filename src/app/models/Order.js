@@ -7,6 +7,8 @@ const ListProduct = new Schema({
     nameProduct: String,
     priceProduct: String,
     qtyProduct: Number,
+    imgProduct: String,
+    idProduct: String,
  });
 const Order = new Schema({
     usernameOrder: { type: String },

@@ -6,7 +6,6 @@ class CheckoutController {
         var total = 0;
         var user = req.user
         const carts = req.session.cart
-        console.log(user)
         if (typeof req.session.cart !== "undefined") {
             for (var i = 0; i < carts.length; i++) {
                 total = total + (carts[i].qty * carts[i].price)
@@ -20,7 +19,13 @@ class CheckoutController {
     }
 
     finish(req, res, next) {
-        res.render('checkout/finish')
+        var total = 0;
+        if (typeof req.session.cart !== "undefined") {
+            for (var i = 0; i < carts.length; i++) {
+                total = total + (carts[i].qty * carts[i].price)
+            }
+        }
+        res.render('checkout/finish', total)
     }
 }
 

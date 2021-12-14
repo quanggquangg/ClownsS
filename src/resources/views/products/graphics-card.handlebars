@@ -85,21 +85,20 @@
 
                    {{#if  
                     (eq this.category "Graphics-card")}}
-                    <article>
-                        <div class="relative h-48 rounded">
-                            <a href="/products/{{this.slug}}">
-                            <img alt="{{this.name}}"
-                                class="h-full rounded bg-black object-cover w-full"
-                                src="{{this.img}}">
-                            </a>
-                        </div>
-                        <footer class="flex justify-between items-center mt-4 capitalize">
-                            <a href="/products/{{this.slug}}">
-                            <p>{{this.name}}</p>
+                   <article>
+                    <div class="relative h-48 w-48">
+                        <a href="/products/{{this.slug}}">
+                            <img alt="{{this.name}}" class="h-full rounded bg-black" src="{{this.img}}"
+                                style="border: solid 1px #CCC" />
+                        </a>
+                    </div>
+                    <footer class="flex items-center mt-4 capitalize w-48" >
+                        <a href="/products/{{this.slug}}">
+                            <h6>{{this.name}}</h6>
                             <p class="text-blue-500 w-full">{{this.price}}</p>
-                            </a>
-                        </footer>
-                    </article>
+                        </a>
+                    </footer>
+                </article>
                     {{/if}}
                     
                     {{/each}}

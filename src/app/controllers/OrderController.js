@@ -9,6 +9,8 @@ class OrderController {
         if (typeof carts !== "undefined") {
             for (var i = 0; i < carts.length; i++) {
                 order.listProducts.push({
+                    idProduct: carts[i].id,
+                    imgProduct: carts[i].img,
                     nameProduct: carts[i].title,
                     priceProduct: carts[i].price,
                     qtyProduct: carts[i].qty

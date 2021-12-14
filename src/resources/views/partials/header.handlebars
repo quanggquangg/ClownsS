@@ -11,24 +11,24 @@
       <ul class="flex gap-8">
         <li>
           <a aria-current="page" class="active" href="/">
-            Home
+            Home <i class="fas fa-home w-8 lg:w-7"></i>
           </a>
         </li>
         <li>
           <a href="/about">
-            About
+            About <i class="fas fa-info w-8 lg:w-7"></i>
           </a>
         </li>
         <li>
           <a href="/products">
-            Products
+            Products <i class="fas fa-laptop-code"></i>
           </a>
         </li>
 
         {{#if (eq user undefined)}}
         <li>
           <a href="/users/login">
-            Login
+            Login <i class="far fa-user w-8 lg:w-7"></i>
           </a>
         </li>
         {{/if}}
