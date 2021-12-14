@@ -15,7 +15,7 @@ class OrderController {
                 })
             }
         }
-        order.status = "Đang xử lý"
+        order.status = "Chưa xác nhận"
         order.save()
             .then(() => res.redirect('/checkout/finish'))
             .catch(next)
@@ -39,7 +39,7 @@ class OrderController {
     }
 
     saveOrder(req, res, next) {
-        Order.updateOne({ _id: req.params.id }, req.body)
+        Order.updateOne({ _id: req.params.slug }, req.body)
             .then(() => res.redirect('/users/order'))
             .catch(erorr => {})
     }

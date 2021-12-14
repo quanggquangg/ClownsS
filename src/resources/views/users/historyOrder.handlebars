@@ -9,8 +9,7 @@
                             <th class="order_number text-center">Mã đơn hàng</th>
                             <th class="date text-center">Ngày đặt</th>
                             <th class="total text-right">Thành tiền</th>
-                            <th class="payment_status text-center">Trạng thái thanh toán</th>
-                            <th class="fulfillment_status text-center">Vận chuyển</th>
+                            <th class="fulfillment_status text-center">Trạng thái đơn hàng</th>
 
                         </tr>
                     </thead>
@@ -22,7 +21,6 @@
                                     title="">{{this._id}}</a></td>
                             <td class="text-center"><span>{{this.createdAt}}</span></td>
                             <td class="text-right"><span class="total money">{{this.total}}</span></td>
-                            <td class="text-center"><span class="status_paid">Chưa thanh toán</span></td>
                             <td class="text-center"><span class="status_fulfilled">{{this.status}}</span></td>
                         </tr>
                         {{/each}}

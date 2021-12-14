@@ -66,6 +66,8 @@ class UsersController {
             }))  
             .catch(next) 
     }
+
+    
 }
 
 module.exports = new UsersController;

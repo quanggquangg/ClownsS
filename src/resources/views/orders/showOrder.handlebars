@@ -55,9 +55,9 @@
                                                         <a href="/products/{{this.nameProduct}}" title="">{{this.nameProduct}}</a>
                                                         <br>
                                                     </td>
-                                                    <td class="money text-center">{{this.priceProduct}}</td>
+                                                    <td class="money text-center">{{tLS (multi this.priceProduct 1)}}₫</td>
                                                     <td class="quantity center text-center">{{this.qtyProduct}}</td>
-                                                    <td class="total money text-right">{{multi this.priceProduct this.qtyProduct}}</td>
+                                                    <td class="total money text-right">{{tLS (multi this.priceProduct this.qtyProduct)}}₫</td>
                                                 </tr>
                                                 {{/each}}
 
@@ -70,7 +70,7 @@
                                         <tbody>
                                             <tr class="order_summary ">
                                                 <td class="text-left" colspan="4"><b>Giá sản phẩm</b></td>
-                                                <td class="total money text-right"><b>{{order.total}}</b></td>
+                                                <td class="total money text-right"><b>{{order.total}}₫</b></td>
                                             </tr>
 
                                             <tr class="order_summary ">
@@ -81,7 +81,7 @@
 
                                             <tr class="order_summary order_total">
                                                 <td class="text-left" colspan="4"><b>Tổng tiền</b></td>
-                                                <td class="total money text-right"><b>{{order.total}}</b></td>
+                                                <td class="total money text-right"><b>{{order.total}}₫</b></td>
                                             </tr>
 
                                         </tbody>
@@ -94,13 +94,13 @@
                                 <div id="order_payment" class="col-md-6 col-sm-6 order-payment">
                                     <div class="alert alert-info">
                                         <span class="text_status">Tình trạng thanh toán:</span> <span
-                                            class="status_paid">Đã hoàn tất</span>
+                                            class="status_paid">Chưa thanh toán</span>
                                     </div>
                                 </div>
                                 <div id="order_shipping" class="col-md-6 col-sm-6 order-shipping">
                                     <div class="alert alert-info">
-                                        <span class="text_status">Vận chuyển:</span>
-                                        <span class="status_fulfilled">Đã giao hàng</span>
+                                        <span class="text_status">Trạng thái đơn hàng:</span>
+                                        <span class="status_fulfilled">{{order.status}}</span>
 
                                     </div>
                                 </div>

@@ -47,6 +47,7 @@ app.engine('handlebars', exhandlebars({
     multi:  (a, b) => a * b,
     eq: (v1, v2) => v1 == v2,
     ueq: (v1, v2) => v1 != v2,
+    tLS: (v1) => v1.toLocaleString(),
   },
   handlebars: allowInsecurePrototypeAccess(Handlebars)
 }))

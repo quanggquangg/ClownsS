@@ -70,7 +70,7 @@ class ProductsController {
                 req.session.cart.push({
                     title: p.name,
                     qty: 1,
-                    price: parseFloat(p.price).toFixed(2)
+                    price: (parseFloat(p.price).toFixed(2) * 1000000)
                 })
             } else {
                 var cart = req.session.cart;
@@ -88,16 +88,19 @@ class ProductsController {
                     cart.push({
                         title: p.name,
                         qty: 1,
-                        price: parseFloat(p.price).toFixed(2)
+                        price: p.price
                     })
                 }
             }
-
-            console.log(req.session.cart);
             var carts = req.session.cart;
             req.flash('success', 'Product added!')
             res.redirect('/products')
         })
+    }
+
+    deleteCart(req, res, next) {
+        req.session.cart = undefined
+        res.redirect("/products/cart")
     }
 
     showCart(req, res, next) {

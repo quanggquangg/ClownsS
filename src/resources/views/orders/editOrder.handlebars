@@ -27,101 +27,113 @@
                     </h3>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-xs-12 content-page ">
-                        <div class="customer-table-wrap">
-                            <div class="customer-table-bg">
-                                <p class="title-detail">Chi tiết đơn hàng </p>
-                                <div class="wrap-table-orderline table-responsive-overflow">
-                                    <div class="table-responsive">
-                                        <table id="order_details" class="table table-customers ">
-                                            <thead>
-                                                <tr>
-                                                    <th class=""></th>
-                                                    <th class="">Sản phẩm</th>
-                                                    <th class="text-center">Đơn giá</th>
-                                                    <th class="text-center">Số lượng</th>
-                                                    <th class="total text-right">Thành tiền</th>
-                                                </tr>
-                                            </thead>
+                <form method="POST" action="">
+                    <div class="row">
+                        <div class="col-xs-12 content-page ">
+                            <div class="customer-table-wrap">
+                                <div class="customer-table-bg">
+                                    <p class="title-detail">Chi tiết đơn hàng </p>
+                                    <div class="wrap-table-orderline table-responsive-overflow">
+                                        <div class="table-responsive">
+                                            <table id="order_details" class="table table-customers ">
+                                                <thead>
+                                                    <tr>
+                                                        <th class=""></th>
+                                                        <th class="">Sản phẩm</th>
+                                                        <th class="text-center">Đơn giá</th>
+                                                        <th class="text-center">Số lượng</th>
+                                                        <th class="total text-right">Thành tiền</th>
+                                                    </tr>
+                                                </thead>
 
+                                                <tbody>
+
+                                                    {{#each order.listProducts}}
+                                                    <tr id="1021840395" class="line-order odd">
+                                                        <td class="order-image">
+                                                        </td>
+                                                        <td class="name" style="max-width:300px">
+                                                            <a href="/products/{{this.nameProduct}}"
+                                                                title="">{{this.nameProduct}}</a>
+                                                            <br>
+                                                        </td>
+                                                        <td class="money text-center">{{this.priceProduct}}</td>
+                                                        <td class="quantity center text-center">{{this.qtyProduct}}</td>
+                                                        <td class="total money text-right">{{multi this.priceProduct
+                                                            this.qtyProduct}}</td>
+                                                    </tr>
+                                                    {{/each}}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="wrap-table-ordership">
+                                        <table class="table table-customers table-customers-summary ">
                                             <tbody>
-
-                                                {{#each order.listProducts}}
-                                                <tr id="1021840395" class="line-order odd">
-                                                    <td class="order-image">
-                                                    </td>
-                                                    <td class="name" style="max-width:300px">
-                                                        <a href="/products/{{this.nameProduct}}"
-                                                            title="">{{this.nameProduct}}</a>
-                                                        <br>
-                                                    </td>
-                                                    <td class="money text-center">{{this.priceProduct}}</td>
-                                                    <td class="quantity center text-center">{{this.qtyProduct}}</td>
-                                                    <td class="total money text-right">{{multi this.priceProduct
-                                                        this.qtyProduct}}</td>
+                                                <tr class="order_summary ">
+                                                    <td class="text-left" colspan="4"><b>Giá sản phẩm</b></td>
+                                                    <td class="total money text-right"><b>{{order.total}}</b></td>
                                                 </tr>
-                                                {{/each}}
 
+                                                <tr class="order_summary ">
+                                                    <td class="text-left" colspan="4"><b>Ship</b></td>
+                                                    <td class="total money text-right"><b>0₫</b></td>
+                                                </tr>
+
+
+                                                <tr class="order_summary order_total">
+                                                    <td class="text-left" colspan="4"><b>Tổng tiền</b></td>
+                                                    <td class="total money text-right"><b>{{order.total}}</b></td>
+                                                </tr>
+
+                                                <tr class="order_summary ">
+                                                    <td class="text-left" colspan="4"><b>Tên khách hàng</b></td>
+                                                    <td class="total money text-right"><b>{{order.usernameOrder}}</b></td>
+                                                </tr>
+
+                                                <tr class="order_summary ">
+                                                    <td class="text-left" colspan="4"><b>Số điện thoại</b></td>
+                                                    <td class="total money text-right"><b>{{order.phonenumberOrder}}</b></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="wrap-table-ordership">
-                                    <table class="table table-customers table-customers-summary ">
-                                        <tbody>
-                                            <tr class="order_summary ">
-                                                <td class="text-left" colspan="4"><b>Giá sản phẩm</b></td>
-                                                <td class="total money text-right"><b>{{order.total}}</b></td>
-                                            </tr>
-
-                                            <tr class="order_summary ">
-                                                <td class="text-left" colspan="4"><b>Ship</b></td>
-                                                <td class="total money text-right"><b>0₫</b></td>
-                                            </tr>
-
-
-                                            <tr class="order_summary order_total">
-                                                <td class="text-left" colspan="4"><b>Tổng tiền</b></td>
-                                                <td class="total money text-right"><b>{{order.total}}</b></td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        </div>
-                        <div class="customer-status-order">
-                            <div class="row">
-                                <div id="order_payment" class="col-md-6 col-sm-6 order-payment">
-                                    <div class="alert alert-info">
-                                        <span class="text_status">Tình trạng thanh toán:</span> 
-                                        <span class="status_paid">Đã hoàn tất</span>
+                            <div class="customer-status-order">
+                                <div class="row">
+                                    <div id="order_payment" class="col-md-6 col-sm-6 order-payment">
+                                        <div class="alert alert-info">
+                                            <span class="text_status">Tình trạng thanh toán:</span>
+                                            <span class="status_paid">Đã hoàn tất</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="order_shipping" class="col-md-6 col-sm-6 order-shipping">
-                                    <div class="alert alert-info">
-                                        <span class="text_status">Trạng thái đơn hàng:</span>
-                                        <span class="text_status">
-                                            <div class="input-group d-inline">
-                                                <select class="custom-select" id="inputGroupSelect04" name="status">
-                                                    <option selected>Chưa xác nhận</option>
-                                                    <option value="1">Đã giao hàng</option>
-                                                    <option value="2">Đã xác nhận</option>
-                                                    <option value="3">Không xác nhận</option>
-                                                </select>
-                                        </span>
+                                    <div id="order_shipping" class="col-md-6 col-sm-6 order-shipping">
+                                        <div class="alert alert-info">
+                                            <span class="text_status">Trạng thái đơn hàng:</span>
+                                            <span class="text_status">
+                                                <div class="input-group d-inline">
+                                                    <select class="custom-select" id="inputGroupSelect04" name="status" type="text">
+                                                        <option selected>{{order.status}}</option>
+                                                        <option value="Đã giao hàng">Đã giao hàng</option>
+                                                        <option value="Đã xác nhận">Đã xác nhận</option>
+                                                        <option value="Không xác nhận">Đã hủy</option>
+                                                        <option value="Đã hoàn tất">Đã hoàn tất</option>
+                                                    </select>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div style="text-align: center;">
+                                <button class="btn btn-success" type="submit">Xác nhận</button>
+                            </div>
+
                         </div>
-                        <form method="POST" action="">
-                        <div style="text-align: center;">
-                            <button class="btn btn-success" type="submit">Xác nhận</button>
-                        </div>
-                        </form>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

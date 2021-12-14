@@ -24,10 +24,10 @@
                                     <h6 name="listProducts" class="my-0">{{this.title}}</h6>
                                     <input type="text" class="form-control" name="qtyProduct" id="qtyProduct"
                                     value="{{this.qty}}" readonly="" style="display: none">
-                                    <small class="text-muted">{{this.price}} x {{this.qty}}</small>
+                                    <small class="text-muted">{{tLS this.price}} x {{this.qty}}</small>
                                 </div>
                                 <div>
-                                <span class="text-muted">{{multi this.qty this.price}}</span>
+                                <span class="text-muted">{{tLS (multi this.qty this.price)}}</span>
                                 </div>
                             </li>
                             {{/each}}
@@ -36,7 +36,7 @@
                                 <span>Tổng thành tiền</span>
                                 <strong>
                                     <input type="text" class="form-control" name="total" id="total"
-                                    value="{{total}}" readonly="">
+                                    value="{{tLS total}}" readonly="">
                                 </strong>
                             </li>
                             

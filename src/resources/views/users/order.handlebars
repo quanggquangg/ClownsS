@@ -1,3 +1,12 @@
+<div class="tw-container">
+    <label>Trạng thái:</label>
+    <button class="btn btn-warning">Tất cả</button>
+    <button class="btn btn-warning">Chưa xác nhận</button>
+    <button class="btn btn-warning">Đã xác nhận</button>
+    <button class="btn btn-warning">Đã giao hàng</button>
+    <button class="btn btn-warning">Đã hoàn tất</button>
+    <button class="btn btn-warning">Đã hủy</button>
+</div>
 <div class="customer-table-wrap">
     <div class="orderlist">
         <p class="title-detail" style="text-align: center;">Danh sách đơn hàng mới nhất</p>
@@ -9,7 +18,6 @@
                             <th class="order_number text-center">Mã đơn hàng</th>
                             <th class="date text-center">Ngày đặt</th>
                             <th class="total text-right">Thành tiền</th>
-                            <th class="payment_status text-center">Trạng thái thanh toán</th>
                             <th class="fulfillment_status text-center">Trạng thái đơn hàng</th>
 
                         </tr>
@@ -22,11 +30,10 @@
                                     title="">{{this._id}}</a></td>
                             <td class="text-center"><span>{{this.createdAt}}</span></td>
                             <td class="text-right"><span class="total money">{{this.total}}</span></td>
-                            <td class="text-center"><span class="status_paid">Chưa thanh toán</span></td>
                             <td class="text-center"><span class="status_fulfilled">{{this.status}}</span></td>
                             <td>
                                 <a href="/order/edit/{{this._id}}">
-                                    <button type="button" class="btn btn-warning">Phê duyệt</button>
+                                    <button type="button" class="btn btn-warning">{{this.status}}</button>
                                 </a>
                             </td>
                         </tr>
