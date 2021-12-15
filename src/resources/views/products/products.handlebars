@@ -5,7 +5,7 @@
             class="text-xl md:text-3xl lg:text-4xl tracking-wider font-bold capitalize text-blue-900"><span>Products</span></span>
     </div>
 </section>
-<div class="tw-container py-10 flex flex-col md:flex-row gap-20" id="products">
+<div class="tw-container py-10 flex flex-col md:flex-row gap-20" >
     <section class="w-40">
         <div>
             <h1 class="text-xl font-bold">Category</h1>
@@ -27,17 +27,17 @@
                     </a>
                 </div>
                 <div class="p-2">
-                    <a href="/products/laptop">
+                    <a href="#" id="phone">
                        <i class="fas fa-mobile-alt"></i>&nbsp;Mobile 
                     </a>
                 </div>
                 <div class="p-2">
-                    <a href="/products/laptop">
+                    <a href="#" id="screen">
                        <i class="fas fa-desktop"></i>&nbsp;Screen 
                     </a>
                 </div>
                 <div class="p-2">
-                    <a href="/products/laptop">
+                    <a href="#" id="camera">
                        <i class="fas fa-camera"></i>&nbsp;Camera 
                     </a>
                 </div>
@@ -76,9 +76,17 @@
 
 <script>
     $(document).ready(function() {
-		$("#laptop").click(function() {
-            
+		$("#camera").click(function() {
             $("#products").load('products/camera #camera');
+		});
+        $("#laptop").click(function() {
+            $("#products").load('products/laptop #laptop');
+		});
+        $("#screen").click(function() {
+            $("#products").load('products/screen #screen');
+		});
+        $("#phone").click(function() {
+            $("#products").load('products/phone #phone');
 		});
 	}); 
 </script>
