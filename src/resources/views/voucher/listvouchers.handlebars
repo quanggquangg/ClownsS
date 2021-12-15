@@ -1,0 +1,28 @@
+<div class="mt-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Voucher Code</th>
+        <th scope="col">Giá trị</th>
+        <th scope="col">Thời gian tạo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each vouchers}}
+        <tr>
+          <th scope="row">{{sum 1 @index}}</th>
+          <td>{{this.code}}</td>
+          <td>{{tLS (multi this.value 1)}}đ</td>
+          <td>{{this.createdAt}}</td>
+          <td>
+            <a href="/voucher/{{this._id}}/edit">Sửa</a>
+            <a href="/voucher/{{this._id}}/delete">Xóa</a>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+</div>

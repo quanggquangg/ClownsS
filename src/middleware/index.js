@@ -1,3 +1,4 @@
+
 module.exports = {
     countCart(req, res, next) {
         var count = 0
@@ -15,5 +16,6 @@ module.exports = {
         var user = req.user
         res.locals.user = user
         next()
-    }
+    },
+    
 }

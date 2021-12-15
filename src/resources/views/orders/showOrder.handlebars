@@ -224,11 +224,11 @@
                                             </div>
                                             <div class="cart_item_price cart_info_col">
                                                 <div class="cart_item_title">Price</div>
-                                                <div class="cart_item_text">{{tLS this.priceProduct}}</div>
+                                                <div class="cart_item_text">{{tLS (multi this.priceProduct 1)}}đ</div>
                                             </div>
                                             <div class="cart_item_total cart_info_col">
                                                 <div class="cart_item_title">Total</div>
-                                                <div class="cart_item_text">{{tLS (multi this.qtyProduct this.priceProduct)}}</div>
+                                                <div class="cart_item_text">{{tLS (multi this.qtyProduct this.priceProduct)}}đ</div>
                                             </div>
                                         </div>
                                     </li>
@@ -239,19 +239,23 @@
                                 <table class="table table-customers table-customers-summary ">
                                     <tbody>
                                         <tr class="order_summary ">
+                                            <td class="text-left" colspan="4"><b>Voucher</b></td>
+                                            <td class="total money text-right"><b>{{order.voucher}}</b></td>
+                                        </tr>
+                                        <tr class="order_summary ">
                                             <td class="text-left" colspan="4"><b>Giá sản phẩm</b></td>
-                                            <td class="total money text-right"><b>{{order.total}}₫</b></td>
+                                            <td class="total money text-right"><b>{{order.total}}</b></td>
                                         </tr>
 
                                         <tr class="order_summary ">
                                             <td class="text-left" colspan="4"><b>Ship</b></td>
-                                            <td class="total money text-right"><b>0₫</b></td>
+                                            <td class="total money text-right"><b>0đ</b></td>
                                         </tr>
 
 
                                         <tr class="order_summary order_total">
                                             <td class="text-left" colspan="4"><b>Tổng tiền</b></td>
-                                            <td class="total money text-right"><b>{{order.total}}₫</b></td>
+                                            <td class="total money text-right"><b>{{order.total}}</b></td>
                                         </tr>
 
                                     </tbody>

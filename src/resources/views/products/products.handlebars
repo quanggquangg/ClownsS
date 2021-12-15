@@ -51,9 +51,6 @@
 
 
                 {{#each products}}
-
-                {{#if
-                (eq this.category "Laptop")}}
                 <article>
                     <div class="relative h-48 w-48">
                         <a href="/products/{{this.slug}}">
@@ -68,8 +65,6 @@
                         </a>
                     </footer>
                 </article>
-                {{/if}}
-
                 {{/each}}
 
             </div>
@@ -79,10 +74,10 @@
 </div>
 
 <script>
-    const searchButton = document.getElementById('search-button');
-    const searchInput = document.getElementById('search-input');
-    searchButton.addEventListener('click', () => {
-        const inputValue = searchInput.value;
-        alert(inputValue);
-    });
+    $(document).ready(function() {
+		$('#load-du-lieu').click(function(e) {
+			e.preventDefault();
+			console.log($('#noidung').load('vidu1.html'));
+		});
+	});
 </script>

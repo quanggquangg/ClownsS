@@ -174,6 +174,43 @@
     cursor: pointer;
     vertical-align: top
   }
+
+  .z_product {
+    width: 400px;
+    ;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+  }
+
+  .is-form {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    height: 2.2rem;
+    width: 1.9rem;
+    padding: 0;
+    text-shadow: 1px 1px 1px #fff;
+    border: 1px solid #ddd;
+  }
+
+  .input-qty {
+    background-color: #fff;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    padding: 0;
+  }
 </style>
 <div class="cart_section">
   <div class="container-fluid">
@@ -189,19 +226,40 @@
                 <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                   <div class="cart_item_name cart_info_col">
                     <div class="cart_item_title">Name</div>
-                    <div class="cart_item_text">{{this.title}}</div>
+                    <a href="/products/{{this.id}}">
+                      <div class="cart_item_text z_product">{{this.title}}</div>
+                    </a>
                   </div>
                   <div class="cart_item_quantity cart_info_col">
                     <div class="cart_item_title">Quantity</div>
-                    <div class="cart_item_text">{{this.qty}}</div>
+                    <div class="cart_item_text">
+                      <form method="GET" action="/products/cart/add">
+                      <input class="input-qty is-form" max="999" min="1" name="qty" type="number" value="{{this.qty}}">                     
+                        <input name="id" value="{{this.id}}" type="hidden">
+                        <button type="submit">
+                          <i class="fas fa-check"></i>
+                        </button>
+                      </form>
+                    </div>
                   </div>
                   <div class="cart_item_price cart_info_col">
                     <div class="cart_item_title">Price</div>
-                    <div class="cart_item_text">{{tLS this.price}}</div>
+                    <div class="cart_item_text">{{tLS this.price}}đ</div>
                   </div>
                   <div class="cart_item_total cart_info_col">
                     <div class="cart_item_title">Total</div>
-                    <div class="cart_item_text">{{tLS (multi this.qty this.price)}}</div>
+                    <div class="cart_item_text">{{tLS (multi this.qty this.price)}}đ</div>
+                  </div>
+                  <div class="cart_item_total cart_info_col">
+                    <div class="cart_item_title">Xóa</div>
+                    <div class="cart_item_text">
+                      <form method="GET" action="/products/cart/del">
+                        <input name="id" value="{{this.id}}" type="hidden">
+                        <button type="submit">
+                          <i class="fas fa-ban"></i>
+                        </button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -211,19 +269,25 @@
           <div class="order_total">
             <div class="order_total_content text-md-right">
               <div class="order_total_title">Order Total:</div>
-              <div class="order_total_amount">{{tLS total}}</div>
+              <div class="order_total_amount">{{tLS total}}đ</div>
             </div>
           </div>
+          <form method="GET" action="/checkout" class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Nhập Voucher" name="voucherCode">
+              <button class="button cart_button_checkout" type="submit">Sử dụng</button>
+            </div>
+          </form>
           <form method="POST" action="">
-          <div class="cart_buttons">
-            <button class="cart_button_clear" type="submit">Delete Cart</button>
-            <a class="" href="/products">
-              <button type="button" class="button cart_button_clear">Continue Shopping</button>
-            </a>
-            <a class="" href="/checkout">
-              <button type="button" class="button cart_button_checkout">Check Out</button>
-            </a>
-          </div>
+            <div class="cart_buttons">
+              <button class="cart_button_clear" type="submit">Xóa giỏ hàng</button>
+              <a class="" href="/products">
+                <button type="button" class="button cart_button_clear">Tiếp tục mua sắm</button>
+              </a>
+              <a class="" href="/checkout">
+                <button type="button" class="button cart_button_checkout">Thanh toán</button>
+              </a>
+            </div>
           </form>
 
         </div>

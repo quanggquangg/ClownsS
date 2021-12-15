@@ -1,23 +1,36 @@
+<section class="bg-blue-100">
+  <div class="tw-container py-8 md:py-16 ml-10"><span
+      class="text-xl md:text-3xl lg:text-4xl tracking-wider font-bold capitalize text-blue-700"><a href="/">Home</a> /
+    </span><span
+      class="text-xl md:text-3xl lg:text-4xl tracking-wider font-bold capitalize text-blue-900"><span>Register</span></span>
+  </div>
+</section>
+
 <body>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
           <div class="card-img-left d-none d-md-flex">
-            <img src="https://png.pngtree.com/png-clipart/20190706/original/pngtree-cartoon-cute-clown-jumping-out-of-the-box-with-elements-png-image_4375717.jpg" alt="Hình Ảnh Minh Họa">
+            <img
+              src="https://png.pngtree.com/png-clipart/20190706/original/pngtree-cartoon-cute-clown-jumping-out-of-the-box-with-elements-png-image_4375717.jpg"
+              alt="Hình Ảnh Minh Họa">
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
             <form class="form-signin" method="POST" action="">
-              
+
               <div class="form-label-group">
-                <input type="text" name="username" id="inputUserame" class="form-control" required autofocus>
-                <label for="inputUserame">Username</label>
+                <input type="text" name="username" id="inputUserame" class="form-control" required autofocus
+                  autocomplete="off">
+                <label for="inputUserame">Họ và Tên</label>
               </div>
 
               <div class="form-label-group">
-                <input type="radio" name="sex" placeholder="Sex" value="Nam" style="margin-left: 20px;"  required>Male</label>
-                <input type="radio" name="sex" placeholder="Sex" value="Nữ" style="margin-left: 20px;" required>Female</label>
+                <input type="radio" name="sex" placeholder="Sex" value="Nam" style="margin-left: 20px;"
+                  required>&nbsp;Male</label>
+                <input type="radio" name="sex" placeholder="Sex" value="Nữ" style="margin-left: 20px;"
+                  required>&nbsp;Female</label>
               </div>
 
               <div class="form-label-group">
@@ -26,13 +39,14 @@
               </div>
 
               <div class="form-label-group">
-                <input type="text" name="phonenumber" id="inputPhonenumber" class="form-control" required>
-                <label for="inputphonenumber">Phone number</label>
+                <input type="text" class="form-control" name="phonenumber" id="phone" autocomplete="off"
+                  onkeyup='checkPhone();' onchange="validatePhone()" />
+                <label for="phone">Phone</label>
+                <span id='messagePhone'></span>
               </div>
-
               <div class="form-label-group">
-                <input type="email" name="email" id="inputEmail" class="form-control" required>
-                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" autocomplete="off" />
+                <label for="email">Email</label>
               </div>
 
               <div class="form-label-group">
@@ -41,21 +55,27 @@
               </div>
 
               <div class="form-label-group">
-                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <input type="password" name="password" id="password" type="password" onkeyup='check();'
+                  class="form-control" required autocomplete="off">
                 <label for="inputPassword">Password</label>
               </div>
-              
+
               <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" required>
+                <input type="password" name="confirm_password" id="confirm_password" onkeyup='check();'
+                  class="form-control">
                 <label for="inputConfirmPassword">Confirm password</label>
+                <span id='message'></span>
               </div>
 
               <div class="text-center">
-                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" id="submit" type="submit"
+                  onmousemove="checkAll()">Register</button>
               </div>
               <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google"></i> Sign up with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google"></i>
+                Sign up with Google</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                  class="fab fa-facebook-f"></i> Sign up with Facebook</button>
               <br>
               <br>
               <a class="d-block text-center mt-2 text-uppercase font-weight-bold" href="/users/login">Sign In</a>
@@ -66,3 +86,78 @@
     </div>
   </div>
 </body>
+
+<script>
+  var check = function () {
+    var isCheck = validatePhone()
+    if (document.getElementById('password').value ==
+      document.getElementById('confirm_password').value) {
+      document.getElementById('message').style.color = 'green';
+      document.getElementById('message').innerHTML = 'Mật khẩu nhập chính xác';
+      if (isCheck == true) {
+        document.getElementById('submit').disabled = false;
+      }
+    } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'Mật khẩu nhập không chính xác';
+      document.getElementById('submit').disabled = true;
+    }
+  }
+
+  function checkAll() {
+    var isCheck = validatePhone()
+    if (document.getElementById('password').value ==
+      document.getElementById('confirm_password').value) {
+      if (isCheck) {
+        document.getElementById('messagePhone').style.color = 'green';
+        document.getElementById('messagePhone').innerHTML = 'Số điện thoại thỏa mãn';
+        document.getElementById('submit').disabled = false;
+      } else {
+        document.getElementById('messagePhone').style.color = 'red';
+        document.getElementById('messagePhone').innerHTML = 'Số điện thoại sai định dạng';
+        document.getElementById('submit').disabled = true;
+      }
+      document.getElementById('message').style.color = 'green';
+      document.getElementById('message').innerHTML = 'Mật khẩu nhập chính xác';
+    } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'Mật khẩu nhập không chính xác';
+      document.getElementById('submit').disabled = true;
+    }
+  }
+
+  function validatePhone() {
+    var count = 0;
+    var a = document.getElementById('phone').value
+    var filter = /^[0-9-+]+$/;
+    for (var i = 0; i < a.length; i++) {
+      count++;
+    }
+    if (filter.test(a) && count > 9 && count < 12) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  function checkPhone() {
+    var count = 0;
+    var a = document.getElementById('phone').value
+    var filter = /^[0-9-+]+$/;
+    for (var i = 0; i < a.length; i++) {
+      count++;
+    }
+    if (filter.test(a) && count > 9 && count < 12) {
+      document.getElementById('messagePhone').style.color = 'green';
+      document.getElementById('messagePhone').innerHTML = 'Số điện thoại thỏa mãn';
+      document.getElementById('submit').disabled = false;
+    }
+    else {
+      document.getElementById('messagePhone').style.color = 'red';
+      document.getElementById('messagePhone').innerHTML = 'Số điện thoại sai định dạng';
+      document.getElementById('submit').disabled = true;
+    }
+  }
+
+</script>

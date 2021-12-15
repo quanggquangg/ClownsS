@@ -13,7 +13,7 @@ router.post('/reg',
   check('email', 'Your email is not valid').isEmail(),
   check('password', 'Your password must be at least 5 characters').isLength({ min: 5 })
   ], usersController.signup,
-  passport.authenticate('local.signup', { successRedirect: '/users/login', successMessage: 'Đăng ký thành công',
+  passport.authenticate('local.signup', { successRedirect: '/', successMessage: 'Đăng ký thành công',
                                   failureRedirect: '/users/reg', failureMessage: 'Đăng ký thất bại',
                                   failureFlash: true })
 );

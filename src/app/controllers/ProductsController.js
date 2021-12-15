@@ -68,7 +68,7 @@ class ProductsController {
             if (typeof req.session.cart == "undefined") {
                 req.session.cart = [];
                 req.session.cart.push({
-                    id: p._id,
+                    id: p.slug,
                     img: p.img,
                     title: p.name,
                     qty: 1,
@@ -88,7 +88,7 @@ class ProductsController {
 
                 if (newItem) {
                     cart.push({
-                        id: p._id,
+                        id: p.slug,
                         img: p.img,
                         title: p.name,
                         qty: 1,
@@ -104,6 +104,33 @@ class ProductsController {
 
     deleteCart(req, res, next) {
         req.session.cart = undefined
+        res.redirect("/products/cart")
+    }
+
+    deleteOneCart(req, res, next) {
+        var id = req.query.id
+        var carts = req.session.cart
+        if (typeof carts !== "undefined") {
+            for (var i = 0; i < carts.length; i++) {
+                if (carts[i].id == id) {
+                    carts.splice(i, 1)
+                }
+            }
+        }
+        res.redirect("/products/cart")
+    }
+
+    addOneCart(req, res, next) {
+        var id = req.query.id
+        var qty = req.query.qty
+        var carts = req.session.cart
+        if (typeof carts !== "undefined") {
+            for (var i = 0; i < carts.length; i++) {
+                if (carts[i].id == id) {
+                    carts[i].qty = qty
+                }
+            }
+        }
         res.redirect("/products/cart")
     }
 

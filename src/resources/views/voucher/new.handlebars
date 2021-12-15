@@ -1,0 +1,16 @@
+<div class="mt-4">
+    <h3 class="tracking-wider font-bold text-4xl md:text-4xl">Thêm voucher mới</h3>
+    <br>
+    <form method="POST" action="/voucher/store">
+        <div class="form-group">
+            <label for="name" class="form-label">Voucher Code</label>
+            <input type="text" class="form-control" id="name" name="code">
+        </div>
+        <div class="form-group">
+            <label for="price" class="form-label">Giá trị voucher</label>
+            <input type="text" class="form-control" id="price" name="value">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Thêm voucher</button>
+    </form>
+</div>

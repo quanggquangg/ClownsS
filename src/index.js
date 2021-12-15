@@ -45,6 +45,7 @@ app.engine('handlebars', exhandlebars({
   helpers: {
     sum: (a, b) => a + b,
     multi:  (a, b) => a * b,
+    minus:  (a, b) => a - b,
     eq: (v1, v2) => v1 == v2,
     ueq: (v1, v2) => v1 != v2,
     tLS: (v1) => v1.toLocaleString(),
