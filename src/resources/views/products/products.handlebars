@@ -5,7 +5,7 @@
             class="text-xl md:text-3xl lg:text-4xl tracking-wider font-bold capitalize text-blue-900"><span>Products</span></span>
     </div>
 </section>
-<div class="tw-container py-10 flex flex-col md:flex-row gap-20">
+<div class="tw-container py-10 flex flex-col md:flex-row gap-20" id="products">
     <section class="w-40">
         <div>
             <h1 class="text-xl font-bold">Category</h1>
@@ -22,7 +22,7 @@
         <br>
         <div class="d-flex flex-column" >
                 <div class="p-2">
-                    <a href="/products/laptop">
+                    <a href="#" id="laptop">
                         <i class="fas fa-laptop"></i>&nbsp;Laptop 
                     </a>
                 </div>
@@ -51,6 +51,7 @@
 
 
                 {{#each products}}
+
                 <article>
                     <div class="relative h-48 w-48">
                         <a href="/products/{{this.slug}}">
@@ -75,9 +76,9 @@
 
 <script>
     $(document).ready(function() {
-		$('#load-du-lieu').click(function(e) {
-			e.preventDefault();
-			console.log($('#noidung').load('vidu1.html'));
+		$("#laptop").click(function() {
+            
+            $("#products").load('products/camera #camera');
 		});
-	});
+	}); 
 </script>
