@@ -199,6 +199,13 @@ class ProductsController {
             }))  
             .catch(next) 
     }
+    search(req, res, next){
+        var name = req.query.name;
+        Product.find({ name: new RegExp(name, "i")})
+        .then(products => res.render('products/products', { 
+            products: mutipleMongooseToObject(products)
+        })) 
+    }
 }
 
 module.exports = new ProductsController;

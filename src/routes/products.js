@@ -17,6 +17,8 @@ router.post('/store', productsController.store )
 router.get('/cart', productsController.showCart )
 router.post('/cart', productsController.deleteCart )
 
+router.get('/search', productsController.search )
+
 router.get('/speaker', productsController.showSpeaker )
 router.get('/camera', productsController.showCamera )
 router.get('/laptop', productsController.showLaptop )
