@@ -88,6 +88,30 @@
         });
     });
 
+$( "#camera" ).click(function() {
+        $( "#camera" ).css('color', 'blue');
+        $( "#laptop" ).css('color', 'black');
+        $( "#screen" ).css('color', 'black');
+        $( "#phone" ).css('color', 'black');
+    });
+    $( "#laptop" ).click(function() {
+        $( "#laptop" ).css('color', 'blue');
+        $( "#camera" ).css('color', 'black');
+        $( "#screen" ).css('color', 'black');
+        $( "#phone" ).css('color', 'black');
+    });
+    $( "#screen" ).click(function() {
+        $( "#screen" ).css('color', 'blue');
+        $( "#camera" ).css('color', 'black');
+        $( "#laptop" ).css('color', 'black');
+        $( "#phone" ).css('color', 'black');
+    });
+    $( "#phone" ).click(function() {
+        $( "#phone" ).css('color', 'blue');
+        $( "#camera" ).css('color', 'black');
+        $( "#laptop" ).css('color', 'black');
+        $( "#screen" ).css('color', 'black');
+    });
 
     $(document).ready(function () {
         $("#myInput").keyup(function () {
