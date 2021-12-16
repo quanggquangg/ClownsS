@@ -1,5 +1,4 @@
 const express = require('express')
-var port = 3000
 const morgan = require('morgan')
 const path = require('path')
 const exhandlebars = require('express-handlebars')
@@ -61,4 +60,4 @@ app.engine('handlebars', exhandlebars({
 route(app)
 
 
-app.listen(port,function(){ console.log('Server listening '+ port) })
+app.listen(process.env.PORT || 3000)
