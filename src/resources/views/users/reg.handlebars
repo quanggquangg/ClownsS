@@ -11,9 +11,10 @@
 {{#if hasError}}
 <div style="text-align: center" class="alert alert-danger">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Đăng ký không thành công</strong> 
+  <strong>Đăng ký không thành công</strong>
 </div>
 {{/if}}
+
 <body>
   <div class="container">
     <div class="row">
@@ -57,9 +58,9 @@
                 <label for="email">Email</label>
               </div>
 
-              <div class="form-label-group">
-                <input type="date" name="dateofbirth" id="inputDateofbirth" class="form-control" required>
-                <label for="inputDateofbirth">Date of birth</label>
+              <div class="col-md-3 mb-3">
+                <label for="Name">Date of birth</label>
+                <input type="date" class="form-control" id="birthday" name="dateofbirth">
               </div>
 
               <div class="form-label-group">
