@@ -5,7 +5,7 @@
             class="text-xl md:text-3xl lg:text-4xl tracking-wider font-bold capitalize text-blue-900"><span>Products</span></span>
     </div>
 </section>
-<div class="tw-container py-10 flex flex-col md:flex-row gap-20" >
+<div class="tw-container py-10 flex flex-col md:flex-row gap-20">
     <section class="w-40">
         <div>
             <h1 class="text-xl font-bold">Category</h1>
@@ -13,41 +13,38 @@
         <br>
         <hr>
         <br>
-        <form action="/products/search", method="GET">
-            <input name="name", type="text", placeholder="name">
-            <button type="submit">Search</button> 
-        </form>
+        <input id="myInput" type="text" placeholder="Search..">
         <br>
         <hr>
         <br>
-        <div class="d-flex flex-column" >
-                <div class="p-2">
-                    <a href="#" id="laptop">
-                        <i class="fas fa-laptop"></i>&nbsp;Laptop 
-                    </a>
-                </div>
-                <div class="p-2">
-                    <a href="#" id="phone">
-                       <i class="fas fa-mobile-alt"></i>&nbsp;Mobile 
-                    </a>
-                </div>
-                <div class="p-2">
-                    <a href="#" id="screen">
-                       <i class="fas fa-desktop"></i>&nbsp;Screen 
-                    </a>
-                </div>
-                <div class="p-2">
-                    <a href="#" id="camera">
-                       <i class="fas fa-camera"></i>&nbsp;Camera 
-                    </a>
-                </div>
+        <div class="d-flex flex-column">
+            <div class="p-2">
+                <a href="#" id="laptop">
+                    <i class="fas fa-laptop"></i>&nbsp;Laptop
+                </a>
+            </div>
+            <div class="p-2">
+                <a href="#" id="phone">
+                    <i class="fas fa-mobile-alt"></i>&nbsp;Mobile
+                </a>
+            </div>
+            <div class="p-2">
+                <a href="#" id="screen">
+                    <i class="fas fa-desktop"></i>&nbsp;Screen
+                </a>
+            </div>
+            <div class="p-2">
+                <a href="#" id="camera">
+                    <i class="fas fa-camera"></i>&nbsp;Camera
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="products" class="w-full">
+    <section class="w-full">
 
-        <article id="products-list">
-            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <article>
+            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8" id="products">
 
 
                 {{#each products}}
@@ -59,13 +56,14 @@
                                 style="border: solid 1px #CCC" />
                         </a>
                     </div>
-                    <footer class="flex items-center mt-4 capitalize w-48" >
+                    <footer class="flex items-center mt-4 capitalize w-48">
                         <a href="/products/{{this.slug}}">
-                            <h6>{{this.name}}</h6>
+                            <h6 name="name">{{this.name}}</h6>
                             <p class="text-blue-500 w-full">{{this.price}}</p>
                         </a>
                     </footer>
                 </article>
+
                 {{/each}}
 
             </div>
@@ -75,18 +73,29 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-		$("#camera").click(function() {
+    $(document).ready(function () {
+        $("#camera").click(function () {
             $("#products").load('products/camera #camera');
-		});
-        $("#laptop").click(function() {
+        });
+        $("#laptop").click(function () {
             $("#products").load('products/laptop #laptop');
-		});
-        $("#screen").click(function() {
+        });
+        $("#screen").click(function () {
             $("#products").load('products/screen #screen');
-		});
-        $("#phone").click(function() {
+        });
+        $("#phone").click(function () {
             $("#products").load('products/phone #phone');
-		});
-	}); 
+        });
+    });
+
+
+    $(document).ready(function () {
+        $("#myInput").keyup(function () {
+            var value = $(this).val().toLowerCase();
+            $("article").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
 </script>

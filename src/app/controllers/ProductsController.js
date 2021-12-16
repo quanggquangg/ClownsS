@@ -170,69 +170,14 @@ class ProductsController {
             .catch(next) 
     }
 
-    showSpeaker(req, res, next) {
+    showPhone(req, res, next) {
         Product.find({})
-            .then(products => res.render('products/speaker', { 
+            .then(products => res.render('products/phone', { 
                 products: mutipleMongooseToObject(products)
             }))  
             .catch(next) 
     }
-    showRam(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/ram', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    showMouse(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/mouse', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    showKeyboard(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/keyboard', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    showHeadphone(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/headphone', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    showDisk(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/disk', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    showGraphicscard(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/graphics-card', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    showPhoneacc(req, res, next) {
-        Product.find({})
-            .then(products => res.render('products/phone-acc', { 
-                products: mutipleMongooseToObject(products)
-            }))  
-            .catch(next) 
-    }
-    search(req, res, next){
-        var name = req.query.name;
-        Product.find({ name: new RegExp(name, "i")})
-        .then(products => res.render('products/products', { 
-            products: mutipleMongooseToObject(products)
-        })) 
-    }
+
 }
 
 module.exports = new ProductsController;

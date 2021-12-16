@@ -1,23 +1,17 @@
 
-    <section id="camera" class="w-full">
-
-        <article id="products-list">
-            <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-
-
                 {{#each products}}
                 {{#if  
                     (eq this.category "Camera")}}    
-                <article>
+                <article id="camera">
                     <div class="relative h-48 w-48">
                         <a href="/products/{{this.slug}}">
                             <img alt="{{this.name}}" class="h-full rounded bg-black" src="{{this.img}}"
                                 style="border: solid 1px #CCC" />
                         </a>
                     </div>
-                    <footer class="flex items-center mt-4 capitalize w-48" >
+                    <footer class="flex items-center mt-4 capitalize w-48">
                         <a href="/products/{{this.slug}}">
-                            <h6>{{this.name}}</h6>
+                            <h6 name="name">{{this.name}}</h6>
                             <p class="text-blue-500 w-full">{{this.price}}</p>
                         </a>
                     </footer>
@@ -25,7 +19,4 @@
                 {{/if}}
                 {{/each}}
 
-            </div>
-        </article>
-    </section>
-
+ 

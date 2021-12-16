@@ -22,19 +22,10 @@ router.get('/cart/del', deleteOneCart )
 router.get('/cart', productsController.showCart )
 router.post('/cart', productsController.deleteCart )
 
-router.get('/search', productsController.search )
-
-router.get('/speaker', productsController.showSpeaker )
 router.get('/camera', productsController.showCamera )
 router.get('/laptop', productsController.showLaptop )
 router.get('/screen', productsController.showScreen )
-router.get('/ram', productsController.showRam )
-router.get('/mouse', productsController.showMouse )
-router.get('/keyboard', productsController.showKeyboard )
-router.get('/headphone', productsController.showHeadphone )
-router.get('/disk', productsController.showDisk )
-router.get('/graphics-card', productsController.showGraphicscard )
-router.get('/phone-acc', productsController.showPhoneacc )
+router.get('/phone', productsController.showPhone )
 
 router.get('/:slug', productsController.show )
 
