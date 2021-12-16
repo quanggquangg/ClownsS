@@ -9,6 +9,7 @@ const app = express()
 const nodemailer =  require('nodemailer');
 const { countCart } = require('../middleware')
 const { loginAuth } = require('../middleware')
+const { flash } = require('../middleware')
 
 function route(app) {  
     app.use('/', countCart, loginAuth, homeRouter)

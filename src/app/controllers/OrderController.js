@@ -18,6 +18,7 @@ class OrderController {
             }
         }
         order.status = "Chưa xác nhận"
+        order.statusPaid = "Chưa thanh toán"
         order.voucher = req.body.voucher
         order.save()
             .then(() => res.redirect('/checkout/finish'))

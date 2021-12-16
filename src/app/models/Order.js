@@ -18,7 +18,8 @@ const Order = new Schema({
     addressOrder: { type: String },
     voucher: { type: String },
     listProducts: [ListProduct],
-    status: String
+    status: String,
+    statusPaid: String
    }, {
        timestamps: true,
    })

@@ -15,9 +15,8 @@ router.post('/reg',
   ], usersController.signup,
   passport.authenticate('local.signup', { successRedirect: '/', successMessage: 'Đăng ký thành công',
                                   failureRedirect: '/users/reg', failureMessage: 'Đăng ký thất bại',
-                                  failureFlash: true })
+                                  failureFlash: 'Đăng ký thất bại' })
 );
-
 router.post('/login', passport.authenticate("local.signin", {
     successRedirect : '/', // Khi bạn điền đúng thông tin đăng nhập thì nó sẽ chuyển hướng bạn đến trang chủ
     failureRedirect : '/users/login', // trở lại trang đăng nhập nếu có lỗi

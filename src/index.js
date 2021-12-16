@@ -9,6 +9,8 @@ const app = express()
 const session = require('express-session')
 const passport = require('passport');
 const flash = require('connect-flash');
+const cookieParser = require('cookie-parser')
+var bodyParser = require('body-parser')
 
 const route = require('./routes')
 const db = require('./config/db')
@@ -22,9 +24,11 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 180 * 60 * 1000 }
   }))
-  app.use(flash());
-  app.use(passport.initialize())
-  app.use(passport.session());
+app.use(flash());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : false}))
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Connect Db
 db.connect();
